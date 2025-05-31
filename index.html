@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Math Practice Quiz</title>
+    
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0; /* Add padding for smaller screens */
+        }
+
+        .quiz-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 700px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #1e3a5f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #e2e8f0;
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            color: #1e3a5f;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #cbd5e0;
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            cursor: not-allowed;
+        }
+
+        .btn.correct {
+            background-color: #c6f6d5;
+            border-color: #38a169;
+        }
+
+        .btn.wrong {
+            background-color: #fed7d7;
+            border-color: #c53030;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #progress-text {
+            color: #4a5568;
+        }
+
+        .next-btn {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+            min-height: 24px;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Medical Math Practice Quiz 🩺</h1>
+        <div id="quiz-body">
+            <h2 id="question-text">Loading question...</h2>
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+            <div id="feedback-text" class="feedback"></div>
+        </div>
+        <div class="controls">
+             <div id="progress-text">Question 1 of 60</div>
+            <button id="next-button" class="next-btn hide">Next</button>
+        </div>
+        <div id="results-container" class="hide">
+            <h2>Quiz Complete! 🎉</h2>
+            <p>Your final score is <span id="final-score">0</span> out of 60.</p>
+            <p id="percentage"></p>
+            <button id="restart-button" class="next-btn">Try Again</button>
+        </div>
+    </div>
+    
+    <script>
+        const questionTextElement = document.getElementById('question-text');
+        const answerButtonsElement = document.getElementById('answer-buttons');
+        const feedbackTextElement = document.getElementById('feedback-text');
+        const nextButton = document.getElementById('next-button');
+        const progressTextElement = document.getElementById('progress-text');
+        const quizBodyElement = document.getElementById('quiz-body');
+        const resultsContainerElement = document.getElementById('results-container');
+        const finalScoreElement = document.getElementById('final-score');
+        const percentageElement = document.getElementById('percentage');
+        const restartButton = document.getElementById('restart-button');
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        const questions = [
+            {
+                question_text: "1. Convert 99°F to Celsius.",
+                options: ["37.2°C", "210.2°C", "67°C", "32.5°C"],
+                correct_answer_index: 0,
+                rationale: "The formula is (99 - 32) * 5/9 = 37.2°C."
+            },
+            {
+                question_text: "2. Convert 44°C to Fahrenheit.",
+                options: ["111.2°F", "6.7°F", "79.2°F", "45.8°F"],
+                correct_answer_index: 0,
+                rationale: "The formula is (44 * 9/5) + 32 = 111.2°F."
+            },
+            {
+                question_text: "3. Convert 189 lbs to kg.",
+                options: ["85.9 kg", "415.8 kg", "186.8 kg", "94.5 kg"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 189 / 2.2 = 85.9 kg."
+            },
+            {
+                question_text: "4. Convert 15 mL to teaspoons.",
+                options: ["3 tsp", "75 tsp", "0.33 tsp", "10 tsp"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 15 mL / 5 mL/tsp = 3 tsp."
+            },
+            {
+                question_text: "5. How many mL are in 80 cc?",
+                options: ["80 mL", "800 mL", "0.08 mL", "8 mL"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 1 cc = 1 mL."
+            },
+            {
+                question_text: "6. You want to give 45 mg of drug A twice daily but only have 30 mg tabs. How many tabs do you need for a 3-day supply?",
+                options: ["9 tabs", "4.5 tabs", "6 tabs", "3 tabs"],
+                correct_answer_index: 0,
+                rationale: "Correct! (45mg * 2 times/day) / 30mg/tab = 3 tabs/day. For 3 days, that's 3 * 3 = 9 tabs."
+            },
+            {
+                question_text: "7. You have an elixir of 12 mg codeine / 5 mL. You want to give the patient 20 mg of codeine. How many mL will you give?",
+                options: ["8.3 mL", "4.2 mL", "12.5 mL", "2.4 mL"],
+                correct_answer_index: 0,
+                rationale: "Using a proportion: (20 mg * 5 mL) / 12 mg = 8.33 mL."
+            },
+            {
+                question_text: "8. How many mLs are in 8 pounds of water?",
+                options: ["3636 mL", "17.6 mL", "3.6 mL", "8000 mL"],
+                correct_answer_index: 0,
+                rationale: "8 lbs / 2.2 lbs/kg = 3.636 kg. Since 1 kg of water is 1000 g or 1000 mL, it is 3636 mL."
+            },
+            {
+                question_text: "9. You need to administer 775 mLs of Normal Saline over 4 hours. The drop factor is 10 gtts/mL. How many drops per minute are required?",
+                options: ["32 gtts/min", "194 gtts/min", "7750 gtts/min", "129 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(775 mL * 10 gtts/mL) / (4 hours * 60 min/hr) = 32.3 gtts/min."
+            },
+            {
+                question_text: "10. You need to administer 2 g of Vancomycin in a 250 mL mini-bag over 2 hours. What rate do you set your IV pump to run at?",
+                options: ["125 mL/hr", "250 mL/hr", "500 mL/hr", "62.5 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "The pump rate is the total volume divided by the time: 250 mL / 2 hours = 125 mL/hr."
+            },
+            {
+                question_text: "11. Convert 101.5°F to Celsius.",
+                options: ["38.6°C", "39.2°C", "37.5°C", "40.1°C"],
+                correct_answer_index: 0,
+                rationale: "The formula is (101.5 - 32) * 5/9 = 38.6°C."
+            },
+            {
+                question_text: "12. Convert 38°C to Fahrenheit.",
+                options: ["100.4°F", "99.8°F", "101.2°F", "102.0°F"],
+                correct_answer_index: 0,
+                rationale: "The formula is (38 * 9/5) + 32 = 100.4°F."
+            },
+            {
+                question_text: "13. Convert 220 lbs to kg.",
+                options: ["100 kg", "110 kg", "98 kg", "105 kg"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 220 / 2.2 = 100 kg."
+            },
+            {
+                question_text: "14. Convert 20 mL to teaspoons.",
+                options: ["4 tsp", "5 tsp", "3.5 tsp", "2.5 tsp"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 20 mL / 5 mL/tsp = 4 tsp."
+            },
+            {
+                question_text: "15. How many mL are in 150 cc?",
+                options: ["150 mL", "15 mL", "1.5 mL", "1500 mL"],
+                correct_answer_index: 0,
+                rationale: "The conversion is 1 cc = 1 mL."
+            },
+            {
+                question_text: "16. You want to give 75 mg of a drug twice daily. You have 25 mg tablets. How many tablets for a 5-day supply?",
+                options: ["30 tabs", "15 tabs", "25 tabs", "20 tabs"],
+                correct_answer_index: 0,
+                rationale: "(75mg * 2) / 25mg/tab = 6 tabs/day. For 5 days, that's 6 * 5 = 30 tabs."
+            },
+            {
+                question_text: "17. You have an elixir of 10 mg/5 mL. You want to give a 25 mg dose. How many mL?",
+                options: ["12.5 mL", "10 mL", "15 mL", "7.5 mL"],
+                correct_answer_index: 0,
+                rationale: "(25 mg * 5 mL) / 10 mg = 12.5 mL."
+            },
+            {
+                question_text: "18. How many mLs are in 5 pounds of water?",
+                options: ["2273 mL", "2500 mL", "2000 mL", "2150 mL"],
+                correct_answer_index: 0,
+                rationale: "5 lbs / 2.2 lbs/kg = 2.27 kg, which is approx 2273 mL of water."
+            },
+            {
+                question_text: "19. Administer 500 mL over 6 hours with a drop factor of 15 gtts/mL. What is the drip rate?",
+                options: ["21 gtts/min", "25 gtts/min", "18 gtts/min", "30 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(500 mL * 15 gtts/mL) / (6 hr * 60 min/hr) = 20.8, which rounds to 21 gtts/min."
+            },
+            {
+                question_text: "20. Administer 1g of a drug in 200 mL over 90 minutes. What is the pump rate in mL/hr?",
+                options: ["133 mL/hr", "150 mL/hr", "100 mL/hr", "125 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "(200 mL / 90 min) * 60 min/hr = 133.3 mL/hr."
+            },
+            {
+                question_text: "21. Convert 97.6°F to Celsius.",
+                options: ["36.4°C", "37.0°C", "35.8°C", "36.9°C"],
+                correct_answer_index: 0,
+                rationale: "(97.6 - 32) * 5/9 = 36.4°C."
+            },
+            {
+                question_text: "22. Convert 19°C to Fahrenheit.",
+                options: ["66.2°F", "65.0°F", "67.5°F", "68.1°F"],
+                correct_answer_index: 0,
+                rationale: "(19 * 9/5) + 32 = 66.2°F."
+            },
+            {
+                question_text: "23. Convert 120 lbs to kg.",
+                options: ["54.5 kg", "60 kg", "50 kg", "52.5 kg"],
+                correct_answer_index: 0,
+                rationale: "120 / 2.2 = 54.5 kg."
+            },
+            {
+                question_text: "24. Convert 30 mL to teaspoons.",
+                options: ["6 tsp", "5 tsp", "7 tsp", "8 tsp"],
+                correct_answer_index: 0,
+                rationale: "30 mL / 5 mL/tsp = 6 tsp."
+            },
+            {
+                question_text: "25. How many cc are in 250 mL?",
+                options: ["250 cc", "25 cc", "2.5 cc", "2500 cc"],
+                correct_answer_index: 0,
+                rationale: "1 mL = 1 cc."
+            },
+            {
+                question_text: "26. Order: 100 mg drug once daily. On hand: 50 mg tabs. How many tabs for a 10 day supply?",
+                options: ["20 tabs", "10 tabs", "30 tabs", "15 tabs"],
+                correct_answer_index: 0,
+                rationale: "(100mg / 50mg/tab) = 2 tabs/day. For 10 days, that's 2 * 10 = 20 tabs."
+            },
+            {
+                question_text: "27. Order: 15 mg codeine. On hand: elixir of 12 mg/5 mL. How many mL?",
+                options: ["6.25 mL", "5.0 mL", "7.5 mL", "6.0 mL"],
+                correct_answer_index: 0,
+                rationale: "(15 mg * 5 mL) / 12 mg = 6.25 mL."
+            },
+            {
+                question_text: "28. How many pounds of water are in 2000 mL?",
+                options: ["4.4 lbs", "5.0 lbs", "4.0 lbs", "4.8 lbs"],
+                correct_answer_index: 0,
+                rationale: "2000 mL is 2 kg of water. 2 kg * 2.2 lbs/kg = 4.4 lbs."
+            },
+            {
+                question_text: "29. Administer 1 L over 10 hours with a drop factor of 20 gtts/mL. What is the drip rate?",
+                options: ["33 gtts/min", "30 gtts/min", "35 gtts/min", "40 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(1000 mL * 20 gtts/mL) / (10 hr * 60 min/hr) = 33.3 gtts/min."
+            },
+            {
+                question_text: "30. Administer 500 mg of a drug in 100 mL over 30 minutes. What is the pump rate?",
+                options: ["200 mL/hr", "150 mL/hr", "100 mL/hr", "250 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "(100 mL / 30 min) * 60 min/hr = 200 mL/hr."
+            },
+            {
+                question_text: "31. Convert 104°F to Celsius.",
+                options: ["40°C", "39°C", "41°C", "38.5°C"],
+                correct_answer_index: 0,
+                rationale: "(104 - 32) * 5/9 = 40°C."
+            },
+            {
+                question_text: "32. Convert 4°C to Fahrenheit.",
+                options: ["39.2°F", "40°F", "38.5°F", "35°F"],
+                correct_answer_index: 0,
+                rationale: "(4 * 9/5) + 32 = 39.2°F."
+            },
+            {
+                question_text: "33. Convert 300 lbs to kg.",
+                options: ["136.4 kg", "150 kg", "135 kg", "140 kg"],
+                correct_answer_index: 0,
+                rationale: "300 / 2.2 = 136.4 kg."
+            },
+            {
+                question_text: "34. Convert 12.5 mL to teaspoons.",
+                options: ["2.5 tsp", "2 tsp", "3 tsp", "1.5 tsp"],
+                correct_answer_index: 0,
+                rationale: "12.5 mL / 5 mL/tsp = 2.5 tsp."
+            },
+            {
+                question_text: "35. How many mL are in 50 cc?",
+                options: ["50 mL", "5 mL", "0.5 mL", "500 mL"],
+                correct_answer_index: 0,
+                rationale: "1 cc = 1 mL."
+            },
+            {
+                question_text: "36. Order: 500 mg three times daily. On hand: 250 mg tabs. How many tabs for a 7-day supply?",
+                options: ["42 tabs", "21 tabs", "35 tabs", "28 tabs"],
+                correct_answer_index: 0,
+                rationale: "(500mg * 3) / 250mg/tab = 6 tabs/day. For 7 days, 6 * 7 = 42 tabs."
+            },
+            {
+                question_text: "37. Order: 40 mg codeine. On hand: elixir of 15 mg/5 mL. How many mL?",
+                options: ["13.3 mL", "15 mL", "12.5 mL", "10 mL"],
+                correct_answer_index: 0,
+                rationale: "(40 mg * 5 mL) / 15 mg = 13.3 mL."
+            },
+            {
+                question_text: "38. How many mLs are in 10 pounds of water?",
+                options: ["4545 mL", "5000 mL", "4000 mL", "4250 mL"],
+                correct_answer_index: 0,
+                rationale: "10 lbs / 2.2 lbs/kg = 4.545 kg, which is approx 4545 mL of water."
+            },
+            {
+                question_text: "39. Administer 250 mL over 2 hours with a drop factor of 10 gtts/mL. What is the drip rate?",
+                options: ["21 gtts/min", "25 gtts/min", "18 gtts/min", "20 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(250 mL * 10 gtts/mL) / (2 hr * 60 min/hr) = 20.8, which rounds to 21 gtts/min."
+            },
+            {
+                question_text: "40. Administer 2g of a drug in 100 mL over 1 hour. What is the pump rate?",
+                options: ["100 mL/hr", "200 mL/hr", "50 mL/hr", "150 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "The rate is 100 mL / 1 hour = 100 mL/hr."
+            },
+            {
+                question_text: "41. Convert 95°F to Celsius.",
+                options: ["35°C", "34°C", "36°C", "35.5°C"],
+                correct_answer_index: 0,
+                rationale: "(95 - 32) * 5/9 = 35°C."
+            },
+            {
+                question_text: "42. Convert 30°C to Fahrenheit.",
+                options: ["86°F", "85°F", "87°F", "84°F"],
+                correct_answer_index: 0,
+                rationale: "(30 * 9/5) + 32 = 86°F."
+            },
+            {
+                question_text: "43. Convert 50 kg to lbs.",
+                options: ["110 lbs", "100 lbs", "105 lbs", "115 lbs"],
+                correct_answer_index: 0,
+                rationale: "50 kg * 2.2 lbs/kg = 110 lbs."
+            },
+            {
+                question_text: "44. Convert 7.5 mL to teaspoons.",
+                options: ["1.5 tsp", "1 tsp", "2 tsp", "2.5 tsp"],
+                correct_answer_index: 0,
+                rationale: "7.5 mL / 5 mL/tsp = 1.5 tsp."
+            },
+            {
+                question_text: "45. How many cc are in 1 Liter?",
+                options: ["1000 cc", "100 cc", "10 cc", "1 cc"],
+                correct_answer_index: 0,
+                rationale: "1 Liter = 1000 mL, and 1 mL = 1 cc."
+            },
+            {
+                question_text: "46. Order: 1g of a drug twice a day. On hand: 500 mg tabs. How many tabs for a 1-day supply?",
+                options: ["4 tabs", "2 tabs", "1 tab", "3 tabs"],
+                correct_answer_index: 0,
+                rationale: "1g = 1000mg. (1000mg * 2) / 500mg/tab = 4 tabs."
+            },
+            {
+                question_text: "47. Order: 5 mg codeine. On hand: elixir of 2.5 mg/5 mL. How many mL?",
+                options: ["10 mL", "5 mL", "15 mL", "2.5 mL"],
+                correct_answer_index: 0,
+                rationale: "(5 mg * 5 mL) / 2.5 mg = 10 mL."
+            },
+            {
+                question_text: "48. How many pounds of water are in 500 mL?",
+                options: ["1.1 lbs", "1.0 lbs", "1.5 lbs", "2.2 lbs"],
+                correct_answer_index: 0,
+                rationale: "500 mL is 0.5 kg of water. 0.5 kg * 2.2 lbs/kg = 1.1 lbs."
+            },
+            {
+                question_text: "49. Administer 1.5 L over 12 hours with a drop factor of 10 gtts/mL. What is the drip rate?",
+                options: ["21 gtts/min", "25 gtts/min", "18 gtts/min", "20 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(1500 mL * 10 gtts/mL) / (12 hr * 60 min/hr) = 20.8, which rounds to 21 gtts/min."
+            },
+            {
+                question_text: "50. Administer 1g of a drug in 50 mL over 20 minutes. What is the pump rate?",
+                options: ["150 mL/hr", "100 mL/hr", "125 mL/hr", "200 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "(50 mL / 20 min) * 60 min/hr = 150 mL/hr."
+            },
+            {
+                question_text: "51. Convert 3 lbs to ounces.",
+                options: ["48 oz", "32 oz", "16 oz", "64 oz"],
+                correct_answer_index: 0,
+                rationale: "3 lbs * 16 oz/lb = 48 oz."
+            },
+            {
+                question_text: "52. Convert 80 ounces to pounds.",
+                options: ["5 lbs", "4 lbs", "6 lbs", "10 lbs"],
+                correct_answer_index: 0,
+                rationale: "80 oz / 16 oz/lb = 5 lbs."
+            },
+            {
+                question_text: "53. A child weighs 88 lbs. A drug is ordered at 5 mg/kg. What is the correct dose in mg?",
+                options: ["200 mg", "440 mg", "88 mg", "176 mg"],
+                correct_answer_index: 0,
+                rationale: "First, convert lbs to kg: 88 lbs / 2.2 lbs/kg = 40 kg. Then calculate the dose: 40 kg * 5 mg/kg = 200 mg."
+            },
+            {
+                question_text: "54. A patient's temperature is 102.2°F. What is this in Celsius?",
+                options: ["39°C", "38.5°C", "40.1°C", "39.5°C"],
+                correct_answer_index: 0,
+                rationale: "(102.2 - 32) * 5/9 = 39°C."
+            },
+            {
+                question_text: "55. A medication must be stored at 8°C. What is this in Fahrenheit?",
+                options: ["46.4°F", "50.1°F", "42.8°F", "44.6°F"],
+                correct_answer_index: 0,
+                rationale: "(8 * 9/5) + 32 = 46.4°F."
+            },
+            {
+                question_text: "56. Order: Give 30 mg of a drug. On hand: An elixir with a concentration of 20 mg/5 mL. How many mL do you administer?",
+                options: ["7.5 mL", "5 mL", "10 mL", "6.5 mL"],
+                correct_answer_index: 0,
+                rationale: "Using a proportion: (30 mg * 5 mL) / 20 mg = 7.5 mL."
+            },
+            {
+                question_text: "57. A patient needs to take 1.5 g of a medication daily, divided into three equal doses. The tablets available are 250 mg. How many tablets are needed for each dose?",
+                options: ["2 tabs", "1 tab", "3 tabs", "4 tabs"],
+                correct_answer_index: 0,
+                rationale: "Total daily dose is 1500 mg. Each dose is 1500 mg / 3 = 500 mg. Each dose requires 500 mg / 250 mg/tab = 2 tablets."
+            },
+            {
+                question_text: "58. Infuse 1200 mL of Normal Saline over 8 hours. The drop factor is 15 gtts/mL. Calculate the flow rate in gtts/min.",
+                options: ["38 gtts/min", "25 gtts/min", "45 gtts/min", "30 gtts/min"],
+                correct_answer_index: 0,
+                rationale: "(1200 mL * 15 gtts/mL) / (8 hr * 60 min/hr) = 37.5 gtts/min, which rounds to 38 gtts/min."
+            },
+            {
+                question_text: "59. You need to administer 300 mg of a drug in a 150 mL bag over 45 minutes. What is the IV pump rate in mL/hr?",
+                options: ["200 mL/hr", "150 mL/hr", "225 mL/hr", "180 mL/hr"],
+                correct_answer_index: 0,
+                rationale: "(150 mL / 45 min) * 60 min/hr = 200 mL/hr."
+            },
+            {
+                question_text: "60. A patient takes 7.5 mL of an elixir three times a day. How much total elixir (in mL) will they need for a 10-day course?",
+                options: ["225 mL", "75 mL", "150 mL", "250 mL"],
+                correct_answer_index: 0,
+                rationale: "Daily volume: 7.5 mL/dose * 3 doses/day = 22.5 mL/day. Total for 10 days: 22.5 mL/day * 10 days = 225 mL."
+            }
+        ];
+
+        nextButton.addEventListener('click', () => {
+            currentQuestionIndex++;
+            showQuestion();
+        });
+
+        restartButton.addEventListener('click', startQuiz);
+
+        function startQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            resultsContainerElement.classList.add('hide');
+            quizBodyElement.classList.remove('hide');
+            progressTextElement.classList.remove('hide');
+            nextButton.classList.add('hide');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            resetState();
+            if (currentQuestionIndex >= questions.length) {
+                showResults();
+                return;
+            }
+
+            let question = questions[currentQuestionIndex];
+            questionTextElement.innerText = question.question_text;
+            progressTextElement.innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+
+            question.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('btn');
+                button.dataset.correct = index === question.correct_answer_index;
+                button.addEventListener('click', selectAnswer);
+                answerButtonsElement.appendChild(button);
+            });
+        }
+
+        function resetState() {
+            nextButton.classList.add('hide');
+            feedbackTextElement.innerText = '';
+            while (answerButtonsElement.firstChild) {
+                answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+            }
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.target;
+            const correct = selectedButton.dataset.correct === 'true';
+            
+            if (correct) {
+                score++;
+                feedbackTextElement.innerText = '✅ Correct! ' + questions[currentQuestionIndex].rationale;
+                feedbackTextElement.style.color = '#38a169';
+            } else {
+                feedbackTextElement.innerText = '❌ Incorrect. ' + questions[currentQuestionIndex].rationale;
+                feedbackTextElement.style.color = '#c53030';
+            }
+
+            Array.from(answerButtonsElement.children).forEach(button => {
+                setStatusClass(button, button.dataset.correct === 'true');
+                button.disabled = true;
+            });
+
+            if (questions.length > currentQuestionIndex + 1) {
+                nextButton.classList.remove('hide');
+            } else {
+                // This is the last question, show results button instead
+                nextButton.innerText = 'Show Results';
+                nextButton.classList.remove('hide');
+            }
+        }
+
+        function setStatusClass(element, correct) {
+            if (correct) {
+                element.classList.add('correct');
+            } else {
+                element.classList.add('wrong');
+            }
+        }
+
+        function showResults() {
+            quizBodyElement.classList.add('hide');
+            progressTextElement.classList.add('hide');
+            nextButton.classList.add('hide');
+
+            resultsContainerElement.classList.remove('hide');
+            finalScoreElement.innerText = score;
+            const percent = (score / questions.length) * 100;
+            percentageElement.innerText = `That's ${percent.toFixed(1)}%!`;
+        }
+
+        // Start the quiz when the page loads
+        startQuiz();
+    </script>
+
+</body>
+</html>
