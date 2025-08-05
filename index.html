@@ -270,73 +270,3551 @@
         // ######################################################################
 
         const quizData = {
-            "Quiz_Module_1": {
-                "moduleName": "Basic Anatomy: The Heart",
-                "questionBank": [
-                    {
-                        "topic": "FourChambers",
-                        "question": "How many chambers does the human heart have?",
-                        "options": ["One", "Two", "Three", "Four"],
-                        "correctAnswer": 3
-                    },
-                    {
-                        "topic": "AortaFunction",
-                        "question": "What is the primary function of the aorta?",
-                        "options": [
-                            "To carry deoxygenated blood to the lungs",
-                            "To carry oxygenated blood to the rest of the body",
-                            "To receive blood from the body",
-                            "To pump blood to the ventricles"
-                        ],
-                        "correctAnswer": 1
-                    }
-                ],
-                "topicTextMap": {
-                    "FourChambers": "The human heart is a four-chambered muscular organ. The four chambers are the right atrium, the left atrium, the right ventricle, and the left ventricle.",
-                    "AortaFunction": "The aorta is the largest artery in the body. Its primary function is to carry oxygenated blood from the left ventricle to the rest of the body through systemic circulation."
-                }
-            },
-            "Quiz_Module_2": {
-                "moduleName": "Pharmacology 101",
-                "questionBank": [
-                    {
-                        "topic": "AspirinClass",
-                        "question": "To which class of drugs does Aspirin belong?",
-                        "options": ["Antibiotic", "NSAID", "Antiviral", "Opioid"],
-                        "correctAnswer": 1
-                    },
-                    {
-                        "topic": "HalfLife",
-                        "question": "What does the term 'half-life' refer to in pharmacology?",
-                        "options": [
-                            "The time it takes for a drug to show its effect",
-                            "The time it takes for half of the drug dose to be eliminated from the body",
-                            "The duration of the drug's patent",
-                            "Half the maximum effective dose"
-                        ],
-                        "correctAnswer": 1
-                    }
-                ],
-                "topicTextMap": {
-                    "AspirinClass": "Aspirin, or acetylsalicylic acid, is a nonsteroidal anti-inflammatory drug (NSAID). It is used to reduce pain, fever, and/or inflammation, and as an antiplatelet agent.",
-                    "HalfLife": "The half-life of a drug is a pharmacokinetic parameter defined as the time it takes for the concentration of the drug in the plasma or the total amount in the body to be reduced by 50%."
-                }
-            },
-            "Quiz_Module_3": {
-                "moduleName": "Clinical Signs",
-                "questionBank": [
-                    {
-                        "topic": "CullensSign",
-                        "question": "Periumbilical ecchymosis (bruising around the umbilicus) is known as what clinical sign?",
-                        "options": ["Turner's Sign", "Chvostek's Sign", "Cullen's Sign", "Trousseau's Sign"],
-                        "correctAnswer": 2
-                    }
-                ],
-                "topicTextMap": {
-                    "CullensSign": "Cullen's sign is superficial edema and bruising in the subcutaneous fatty tissue around the umbilicus. It is a sign of retroperitoneal hemorrhage, often associated with acute pancreatitis."
-                }
-            }
-        };
+  "Quiz_Module_1": {
+   "moduleName": "PD Motor Sensory",
+    "questionBank": [
+      {
+        "topic": "Pain and Temperature Sensation",
+        "question": "When assessing the spinothalamic tract, what is the correct follow-up action if a patient's response to the 'sharp or dull' test is abnormal?",
+        "options": [
+          "Check their temperature sensation using hot and cold objects.",
+          "Proceed directly to testing light touch sensation.",
+          "Document the finding and end the sensory exam.",
+          "Test for vibration sense using a tuning fork."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Position and Vibration Sensation",
+        "question": "When testing position sense (proprioception) of the big toe, what is the next step if the patient's sense is found to be impaired?",
+        "options": [
+          "Move to the ankle and continue to travel proximally.",
+          "Retest the same toe with a tuning fork for vibration.",
+          "Test the fingers on the same side.",
+          "Conclude the patient has a dorsal column lesion and stop."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Light Touch Sensation",
+        "question": "When testing light touch sensation, what is a key procedural instruction to ensure accurate assessment of dermatomes?",
+        "options": [
+          "Do not swipe across multiple dermatomes.",
+          "Always test from proximal to distal.",
+          "Apply firm pressure with the cotton.",
+          "Ask the patient to identify 'sharp or dull'."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Discriminative Sensation Overview",
+        "question": "Which of the following is considered a component of discriminative sensation testing?",
+        "options": [
+          "Graphesthesia",
+          "Tandem walking",
+          "The Romberg test",
+          "Observing for fasciculations"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Body Position and Stance Assessment",
+        "question": "Which of the following is NOT listed as a component of the inspection for body position and stance?",
+        "options": [
+          "Gait pattern",
+          "Muscle bulk",
+          "Muscle tone",
+          "Body Position"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Voluntary and Involuntary Movements Assessment",
+        "question": "When performing a motor exam, which of the following should be specifically observed for?",
+        "options": [
+          "Fasciculations and atrophy",
+          "Nuchal rigidity and Kernig's sign",
+          "Hypoalgesia and anesthesia",
+          "Response to light touch"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Muscle Bulk, Tone, and Strength Assessment",
+        "question": "When grading muscle strength on a 0-5/5 scale, what factors should be allowed for during the assessment?",
+        "options": [
+          "Age, sex, and conditioning",
+          "The patient's pain tolerance",
+          "The time of day",
+          "The temperature of the room"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Romberg Test",
+        "question": "What constitutes a positive Romberg sign?",
+        "options": [
+          "The patient stands well with eyes open but loses balance when they are closed.",
+          "The patient is unable to stand with eyes open or closed.",
+          "The patient can hold their arms outstretched for one minute without drifting.",
+          "The patient sways slightly but maintains balance when their eyes are closed."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Rapid Alternating Movements (RAMs)",
+        "question": "Which of the following actions is listed as a test for Rapid Alternating Movements?",
+        "options": [
+          "Tapping the thumb to distal fingers in sequence.",
+          "Walking heel to toe.",
+          "Hopping on one foot.",
+          "Performing a shallow knee bend."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Coordination and Equilibrium Testing",
+        "question": "Which test involves having the patient touch their nose and then the examiner's moving finger?",
+        "options": [
+          "Point to Point movements",
+          "Romberg Test",
+          "Graphesthesia",
+          "Pronator Drift"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Gait Assessment",
+        "question": "Which specific type of walking is used to assess gait during the neurological exam?",
+        "options": [
+          "Heel to toe (tandem walking)",
+          "Walking backwards",
+          "Walking with eyes closed",
+          "Marching in place"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Deep Tendon Reflexes (DTRs) Examination",
+        "question": "According to the guidelines for eliciting a DTR, what is a crucial element for a successful test?",
+        "options": [
+          "The patient must be relaxed.",
+          "The examiner must use maximum force.",
+          "The test must always be performed with the patient sitting.",
+          "The reflexes on the left side should be tested before the right."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Abdominal Reflexes",
+        "question": "What is the correct direction of stimulation when testing the abdominal reflexes?",
+        "options": [
+          "From the outside toward the umbilicus.",
+          "From the umbilicus outward.",
+          "In a circular motion around the umbilicus.",
+          "Vertically from the xiphoid to the pubis."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Anal Reflex",
+        "question": "A lack of contraction during the anal reflex test suggests a lesion in which spinal area?",
+        "options": [
+          "S2, S3, S4 area",
+          "L5, S1 area",
+          "C5, C6 area",
+          "T8, T9, T10 area"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Babinski Response (Plantar Reflex)",
+        "question": "What is the expected response to the plantar reflex in a normal adult?",
+        "options": [
+          "A down-going response of the toes.",
+          "Fanning of the toes.",
+          "Absence of any movement.",
+          "Rhythmic oscillation of the foot."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Graphesthesia",
+        "question": "What is the correct procedure for testing Graphesthesia?",
+        "options": [
+          "Trace a number on the patient's hand while their eyes are closed.",
+          "Place a familiar object in the patient's hand while their eyes are closed.",
+          "Touch two points on the patient's skin and ask if they feel one or two.",
+          "Ask the patient to draw a number on the examiner's hand."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Stereognosis",
+        "question": "What is considered a normal finding when testing for stereognosis?",
+        "options": [
+          "The patient identifies the object within 5 seconds.",
+          "The patient can describe the texture of the object.",
+          "The patient can guess the color of the object.",
+          "The patient identifies the object within 30 seconds."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Point to Point Testing",
+        "question": "In point-to-point testing, after touching their nose and the examiner's finger, what is a variation of the test?",
+        "options": [
+          "Repeating the movement with eyes closed.",
+          "Increasing the speed of the movement.",
+          "Performing the movement while standing on one foot.",
+          "Using the opposite hand."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Two-Point Discrimination",
+        "question": "What is the minimal distance at which a patient should be able to distinguish one from two points on the finger pads during two-point discrimination testing?",
+        "options": [
+          "<5mm",
+          ">10mm",
+          "Exactly 8mm",
+          "<2cm"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Brudzinski's Sign",
+        "question": "A positive Brudzinski's sign is characterized by what response?",
+        "options": [
+          "Flexion of the hips and knees in response to neck flexion.",
+          "Pain behind the knee when the flexed knee is extended.",
+          "Inability to touch the chin to the chest.",
+          "Fanning of the toes when the sole of the foot is stroked."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Kernig's Sign",
+        "question": "What physical finding indicates a positive Kernig's sign?",
+        "options": [
+          "Pain bilaterally behind the knee when the flexed knee is extended.",
+          "Flexion of the hips and knees when the neck is flexed.",
+          "Oscillations of the foot when it is sharply dorsiflexed.",
+          "Pronation of the hand when arms are held supinated with eyes closed."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "General Neurological Exam Principles",
+        "question": "Which of the following is a recommended principle for conducting a neurological exam?",
+        "options": [
+          "Compare side to side.",
+          "Always test proximal to distal.",
+          "Maintain a consistent, predictable pace.",
+          "Focus on a single dermatome for each test."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Upper vs. Lower Motor Lesion Differentiation",
+        "question": "Which set of findings is characteristic of a lower (peripheral) motor lesion?",
+        "options": [
+          "Hypoactive DTRs, atrophy, and fasciculations.",
+          "Hyperactive DTRs, positive Babinski sign, and spasticity.",
+          "Hyperactive DTRs, normal muscle tone, and no atrophy.",
+          "Hypoactive DTRs and spasticity of tone."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Upper Motor Neuron Damage Localization",
+        "question": "If an upper motor neuron is damaged below the crossover of its tracts in the medulla, where does the motor impairment occur?",
+        "options": [
+          "On the same side of the body (ipsilateral).",
+          "On the opposite side of the body (contralateral).",
+          "Bilaterally in both lower extremities.",
+          "Only in the cranial nerves."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Dorsal Column Tracts Function",
+        "question": "The fasciculus gracile and fasciculus cuneate tracts are responsible for which sensations?",
+        "options": [
+          "Fine touch, vibration, and proprioception",
+          "Pain and temperature",
+          "Crude touch and pressure",
+          "Voluntary movements and muscle tone"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Spinothalamic Tracts Function",
+        "question": "Which sensory modalities are carried by the lateral and anterior spinothalamic tracts, respectively?",
+        "options": [
+          "Pain and temperature; crude touch and pressure",
+          "Vibration and position; fine touch",
+          "Fine touch; pain and temperature",
+          "Voluntary movement; balance"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Descending (Motor) Tracts Function",
+        "question": "Which descending motor tract is primarily responsible for balance and posture?",
+        "options": [
+          "Vestibulospinal",
+          "Corticospinal",
+          "Rubrospinal",
+          "Tectospinal"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Analgesia",
+        "question": "What is the correct definition of analgesia?",
+        "options": [
+          "Absence of pain sensation",
+          "Decreased sensitivity to pain",
+          "Increased sensitivity to pain",
+          "Absence of touch sensation"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Hypoalgesia",
+        "question": "What is the correct definition of hypoalgesia?",
+        "options": [
+          "DECREASED sensitivity to pain",
+          "INCREASED sensitivity to pain",
+          "Absence of pain sensation",
+          "DECREASED sensitivity to touch"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Hyperalgesia",
+        "question": "What is the correct definition of hyperalgesia?",
+        "options": [
+          "INCREASED sensitivity to pain",
+          "DECREASED sensitivity to pain",
+          "Peculiar sensation without stimulation",
+          "Distorted sensation in response to stimulus"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Anesthesia",
+        "question": "What is the correct definition of anesthesia?",
+        "options": [
+          "Absence of touch sensation",
+          "Decreased sensitivity to touch",
+          "Increased sensitivity to touch",
+          "Absence of pain sensation"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Hypesthesia",
+        "question": "What is the correct definition of hypesthesia?",
+        "options": [
+          "DECREASED sensitivity to touch",
+          "INCREASED sensitivity to touch",
+          "Absence of touch sensation",
+          "DECREASED sensitivity to pain"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Hyperesthesia",
+        "question": "What is the correct definition of hyperesthesia?",
+        "options": [
+          "INCREASED sensitivity to touch",
+          "DECREASED sensitivity to touch",
+          "Peculiar sensation without stimulation",
+          "Distorted sensation in response to stimulus"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Paresthesia",
+        "question": "What term describes a peculiar sensation without an obvious stimulation?",
+        "options": [
+          "Paresthesia",
+          "Dysesthesia",
+          "Analgesia",
+          "Hypoalgesia"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Dysesthesia",
+        "question": "What is the correct definition of dysesthesia?",
+        "options": [
+          "Distorted sensation in response to stimulus",
+          "Peculiar sensation without an obvious stimulation",
+          "Absence of touch sensation",
+          "Increased sensitivity to pain"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Loss of Position and Vibration Sense Causes",
+        "question": "Which of the following conditions is listed as a potential cause for the loss of position and vibration sense?",
+        "options": [
+          "B12 deficiency",
+          "Acute stroke",
+          "Meningitis",
+          "Parkinson's disease"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Point Localization",
+        "question": "How is point localization tested?",
+        "options": [
+          "Touch the skin with the patient's eyes closed, then have them open their eyes and point to the spot.",
+          "Touch two places simultaneously and ask the patient to identify the number of points.",
+          "Trace a number on the patient's hand and ask them to identify it.",
+          "Ask the patient to touch their nose and then your finger repeatedly."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Extinction",
+        "question": "How is the phenomenon of extinction tested during a sensory exam?",
+        "options": [
+          "Touch areas in the same dermatome on opposite sides of the body at the same time.",
+          "Ask the patient to identify an object in their hand with their eyes closed.",
+          "Move a vibrating tuning fork proximally until the sensation is lost.",
+          "Have the patient walk heel-to-toe with their eyes closed."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Myoclonus",
+        "question": "How is myoclonus defined?",
+        "options": [
+          "Rapid shock-like muscle jerks",
+          "Slow writhing movements of the limbs",
+          "Abrupt, stereotyped, coordinated movements",
+          "Maintenance of an abnormal posture"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Chorea",
+        "question": "Which description best fits chorea?",
+        "options": [
+          "Rapid, jerky twitches that may blend into one another",
+          "Rapid shock-like muscle jerks that are not random",
+          "Repetitive twisting movements",
+          "Stereotyped vocalizations"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Tics",
+        "question": "What is the definition of a tic?",
+        "options": [
+          "Abrupt, stereotyped, coordinated movements or vocalizations",
+          "Rapid, jerky twitches that are random in location",
+          "Rapid shock-like muscle jerks",
+          "Maintenance of an abnormal posture"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Dystonia",
+        "question": "Which of the following best defines dystonia?",
+        "options": [
+          "Maintenance of abnormal posture or repetitive twisting movements",
+          "Rapid shock-like muscle jerks",
+          "Rapid, jerky twitches that are random",
+          "Abrupt, stereotyped vocalizations"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Muscle Strength Grading Scale",
+        "question": "On the muscle strength grading scale, what does a grade of 2 represent?",
+        "options": [
+          "Movement without the influence of gravity",
+          "Total paralysis",
+          "Movement against gravity but not resistance",
+          "Normal power and strength"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Paresis",
+        "question": "What is the definition of hemiparesis?",
+        "options": [
+          "Weakness on one side of the body",
+          "Paralysis on one side of the body",
+          "Weakness in all four limbs",
+          "Paralysis from the shoulders down"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Plegia",
+        "question": "What does the term quadriplegia describe?",
+        "options": [
+          "Paralysis from the shoulders down, affecting all 4 limbs",
+          "Weakness in all 4 limbs",
+          "Paralysis of the lower half of the body",
+          "Absence of strength in one limb"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Grip Strength Test Procedure",
+        "question": "What is the primary benefit of testing right and left grip strength simultaneously?",
+        "options": [
+          "It allows for direct comparison between the two sides.",
+          "It saves time during the physical exam.",
+          "It is a better test of overall conditioning.",
+          "It distracts the patient from the test."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Ataxia",
+        "question": "What is the definition of ataxia?",
+        "options": [
+          "A gait that lacks coordination and is instable",
+          "The complete inability to walk",
+          "A wide gait seen only in Parkinson's disease",
+          "The inability to maintain an upright posture while standing still"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Pronator Drift",
+        "question": "A positive pronator drift test is sensitive and specific for a lesion in which part of the nervous system?",
+        "options": [
+          "The corticospinal tract in the contralateral hemisphere",
+          "The cerebellum",
+          "The basal ganglia",
+          "The spinothalamic tract in the ipsilateral hemisphere"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "DTR Grading Scale",
+        "question": "What does a DTR grade of 4/4 signify?",
+        "options": [
+          "Very brisk, hyperactive, with clonus",
+          "Average, NORMAL",
+          "Low normal",
+          "Absent"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Reflex Arc Physiology",
+        "question": "Which of the following is NOT listed as a required component for a functional reflex arc?",
+        "options": [
+          "Intact cranial nerve fibers",
+          "Intact sensory nerve fibers",
+          "Functional synapses in the spinal cord",
+          "Competent muscle fibers"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Hyperreactive DTRs Significance",
+        "question": "If hyperreactive DTRs are found, and the lesion is above the medulla, where would the lesion be in relation to the findings?",
+        "options": [
+          "Contralateral",
+          "Ipsilateral",
+          "Bilateral",
+          "Distal"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "DTR Nerve Root Levels",
+        "question": "The Achilles (ankle) reflex primarily tests which spinal nerve root?",
+        "options": [
+          "S1",
+          "L4",
+          "C7",
+          "T10"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Biceps Reflex Procedure",
+        "question": "When testing the biceps reflex (C5, C6), what is the correct technique?",
+        "options": [
+          "Press on the tendon and strike your own finger.",
+          "Strike the tendon directly above the olecranon.",
+          "Strike the patellar tendon while the knee is flexed.",
+          "Support the foot in a neutral position and strike the tendon."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Triceps Reflex Procedure",
+        "question": "To elicit the triceps reflex, the examiner should strike the tendon located where?",
+        "options": [
+          "Above the olecranon",
+          "On the biceps tendon",
+          "Below the patella",
+          "On the radial styloid process"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Brachioradialis Reflex Procedure",
+        "question": "What is the expected response when correctly eliciting the brachioradialis reflex?",
+        "options": [
+          "Supination and wrist flexion",
+          "Elbow extension",
+          "Finger flexion",
+          "Pronation of the forearm"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Patellar Reflex Procedure",
+        "question": "What is the correct action to elicit the patellar reflex?",
+        "options": [
+          "Flex the knee and strike below the patella.",
+          "Extend the knee and strike above the patella.",
+          "Flex the knee and strike the hamstring tendon.",
+          "Extend the knee and strike the Achilles tendon."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Achilles Reflex Procedure",
+        "question": "What is the correct positioning of the foot when testing the Achilles reflex?",
+        "options": [
+          "Supported in a neutral position",
+          "Fully dorsiflexed",
+          "Fully plantarflexed",
+          "Inverted and supported"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Clonus Test Procedure",
+        "question": "What action is performed by the examiner to test for clonus in the foot?",
+        "options": [
+          "Sharply dorsiflex the foot and hold it dorsiflexed.",
+          "Sharply plantarflex the foot and release.",
+          "Tap the Achilles tendon repeatedly.",
+          "Ask the patient to rapidly tap their foot."
+        ],
+        "correctAnswer": 0
+      }
+    ],
+    "topicTextMap": {
+      "Pain and Temperature Sensation": "Pain and Temperature (Spinothalamic Tract). If 'pain' is abnormal, check temperature. PAIN: Using a sharp safety pin or a broken cotton swab ask the patient 'Is this sharp or dull' Again, compare side to side. TEMPERATURE: Two test tubes filled with hot or cold water or a tuning fork heated or cooled. Touch the skin and ask them to identify.",
+      "Position and Vibration Sensation": "Posterior Column/Dorsal Column. Position (proprioception): Holding the big toe move it up and down (tell them 'up' and 'down'). Then have the patient close their eyes and tell you 'up' or 'down'. Compare side to side. If impaired move to the ankle and travel proximally. Vibration (vibratory sense): Using the tuning fork, place it distally on the big toe (starting at distal interphalangeal joint) and have the patient tell you when the vibration stops. Compare side to side. If vibration sense is impaired, move proximally.",
+      "Light Touch Sensation": "Have the patient tell you when the touch is felt. Compare side to side. Sample the dermatomes. So not swipe across multiple dermatomes.",
+      "Discriminative Sensation Overview": "Discriminative sensation includes Stereognosis, Graphesthesia, Two point discrimination, Point localization, and Extinction.",
+      "Body Position and Stance Assessment": "Inspect: Muscle bulk (measure side to side): 4 different areas, Muscle tone, Body Position, Body Stance.",
+      "Voluntary and Involuntary Movements Assessment": "Watch for: fasciculations, atrophy, abnormal movements, involuntary movements.",
+      "Muscle Bulk, Tone, and Strength Assessment": "Inspect: Muscle bulk (measure side to side): 4 different areas, Muscle tone. Muscle strength: Test bilaterally with resistance. Grade it 0-5/5. Allow for age, sex, conditioning.",
+      "Romberg Test": "Arms at side or outstretched. Close eyes. Hold for 1 minute. Be ready to catch. A test of position sense. Normal=the patient can maintain upright posture. Abnormal= the patient stands well with eyes open, but loses balance when they are closed. (POSITIVE ROMBERG).",
+      "Rapid Alternating Movements (RAMs)": "Hands over and back, one by one. Tap toes to your hand as quickly as they can. Tap thumb to distal fingers in sequence. Tongue wiggle test. Say 'la la la' 'pa pa pa' 'fa fa fa' etc.",
+      "Coordination and Equilibrium Testing": "Point to Point movements. Finger to their nose then to your finger. Move your finger around. Finger to your finger then into the air, repeat, repeat with eyes closed.",
+      "Gait Assessment": "Observe normal gait. Walk heel to toe (tandem walking). Walk on toes and then heels. Hop on one foot. Do a shallow knee bend.",
+      "Deep Tendon Reflexes (DTRs) Examination": "To elicit a reflex the patient must be relaxed. Strike briskly with wrist movement. Patient can be supine or sitting. Response is affected by your force. Use as little as needed to elicit a response. Compare bilaterally.",
+      "Abdominal Reflexes": "Abdominal (T8, T9, T10 Upper; T10, T11, T12 Lower). Stimulate abdominal wall, you should see contraction of the abdominal muscles, sometimes the umbilicus deviates toward it. You move from the outside toward the umbilicus.",
+      "Anal Reflex": "Using a cotton swab, stroke outward in the four quadrants from the anus. You should see contraction of the anal musculature. No contraction suggests lesion in the S2, S3, S4 area.",
+      "Babinski Response (Plantar Reflex)": "Plantar (Babinski) (L5, S1). Stroke foot, curving medially over ball of foot. Watch for fanning of toes. Present in infants due to incomplete myelination. Disappears and gives way to the flexor response around 12-18 months of age. In normal adult it should be down going otherwise.",
+      "Graphesthesia": "Trace the number on the patients hand as if they were looking at it. They have their eyes closed.",
+      "Stereognosis": "Coin, paper clip, key. Test bilaterally. *normal: they know it in 5 seconds.",
+      "Point to Point Testing": "Finger to their nose then to your finger. Move your finger around. Finger to your finger then into the air, repeat, repeat with eyes closed.",
+      "Two-Point Discrimination": "Two ends of an opened paper clip OR two pins. Minimal distance at which the patient can tell one from two points (<5mm on finger pads). Different references for different parts of the body.",
+      "Brudzinski's Sign": "Positive = flexion of hips and knees in response to neck flexion.",
+      "Kernig's Sign": "Positive = pain bilaterally behind knee when flexed knee is extended.",
+      "General Neurological Exam Principles": "Check distal to proximal (and compare distal to proximal). Compare side to side. Scatter samples to sample various dermatomes. Vary the pace of your examination.",
+      "Upper vs. Lower Motor Lesion Differentiation": "Upper (central) lesions: hyperactive DTRs, Positive Babinski sign, spasticity of tone. Lower (peripheral) lesions: hypoactive DTRs, atrophy and fasciculation are common, muscle tone is normal or reduced.",
+      "Upper Motor Neuron Damage Localization": "When upper motor neurons are damaged above the crossover of its tracts in the medulla, motor impairment is on the opposite side of the body. If below this crossover, it occurs on the same side of the body (ipsilateral).",
+      "Dorsal Column Tracts Function": "Fasciculus gracile (T6 and below) and fasciculus cuneate (T6 and above): responsible for fine touch, vibration, position of limbs and trunk (proprioception).",
+      "Spinothalamic Tracts Function": "Lateral: Pain and temperature. Anterior: crude touch and pressure.",
+      "Descending (Motor) Tracts Function": "Corticospinal: voluntary movements (AROM). Reticulospinal: tone (PROM). Rubrospinal: fine motor movement. Vestibulospinal: balance, posture. Tectospinal: head and vision, coordination.",
+      "Analgesia": "absence of pain sensation",
+      "Hypoalgesia": "DECREASED sensitivity to pain",
+      "Hyperalgesia": "INCREASED sensitivity to pain",
+      "Anesthesia": "absence of touch sensation",
+      "Hypesthesia": "DECREASED sensitivity to touch",
+      "Hyperesthesia": "INCREASED sensitivity to touch",
+      "Paresthesia": "peculiar sensation without an obvious stimulation",
+      "Dysesthesia": "distorted sensation in response to stimulus",
+      "Loss of Position and Vibration Sense Causes": "Loss of position sense and vibration sense are seen in multiple sclerosis, B12 deficiency, posterior column disease, peripheral neuropathy.",
+      "Point Localization": "Touch the skin with patient's eyes closed. Have them open their eyes and point to the place touched.",
+      "Extinction": "Touch at the same time areas in the same dermatome on opposite sides of the patient's body (their eyes closed). Ask them to tell you where they feel your touch and point to it.",
+      "Myoclonus": "rapid shock-like muscle jerks",
+      "Chorea": "rapid, jerky twitches, similar to myoclonus but more random in location and more likely to blend into one another",
+      "Tics": "abrupt, stereotyped, coordinated movements or vocalizations",
+      "Dystonia": "maintenance of abnormal posture or repetitive twisting movements",
+      "Muscle Strength Grading Scale": "Grade 0: Total paralysis. Grade 1: Flicker of contraction. Grade 2: Movement/no gravity (assist). Grade 3: Movement/Gravity. Grade 4: Incomplete movement against resistance. Grade 5: Normal Power/Strength.",
+      "Paresis": "Weakness - paresis. hemiparesis (weakness on one side of body).",
+      "Plegia": "Absence of strength, -plegia. quadriplegia (paralysis from the shoulders down, all 4 limbs).",
+      "Grip Strength Test Procedure": "Have the patient squeeze two fingers as hard as they can. You should have a hard time removing your fingers. If you test right and left simultaneously, you can compare.",
+      "Ataxia": "A gait that lacks coordination and is instable.",
+      "Pronator Drift": "Ask person to: Close eyes, Flex and Supinate arms, Hold. Positive if unable to hold and patient will start to pronate hand. This test is sensitive and specific for corticospinal tract lesion in the contralateral hemisphere. Often positive in stroke.",
+      "DTR Grading Scale": "4 - very brisk, hyperactive, with clonus. 3 - above average, +/- assoc. with disease. 2 - average, NORMAL. 1 - low normal. 0 - absent.",
+      "Reflex Arc Physiology": "Reflexes are an involuntary, stereotyped response. Reflexes are a unit of sensory (afferent) and motor (efferent) function that depend on: Intact sensory nerve fibers, Functional synapses in spinal cord, Intact motor nerve fibers, Functional neuromuscular junctions, Competent muscle fibers.",
+      "Hyperreactive DTRs Significance": "Hyper reactive DTRs suggest a central lesion. The corticospinal tract crosses over at the level of the medula, so the lesion would be contralateral.",
+      "DTR Nerve Root Levels": "S1: Ankle. L2,L3,L4: Knee. C5, C6: Brachioradialis. C5, C6: Biceps. C6, C7: Triceps. T8, T9, T10: upper abdominal. T10, T11, T12: lower abdominal.",
+      "Biceps Reflex Procedure": "Biceps (C5, C6). Partial elbow flexion, press on tendon, strike own finger, watch and feel for response.",
+      "Triceps Reflex Procedure": "Triceps (C6, C7). Partial elbow flexion, strike above olecranon. OR - arm abducted, elbow flexed.",
+      "Brachioradialis Reflex Procedure": "Brachioradialis (C5, C6). Hand on lap, partially pronated - watch for supination and wrist flexion.",
+      "Patellar Reflex Procedure": "Patellar (L2, L3, L4). Flex knee, strike below patella.",
+      "Achilles Reflex Procedure": "Achilles (S1). Support foot in neutral position.",
+      "Clonus Test Procedure": "Patient's lower leg should be relaxed. Sharply dorsiflex the foot and hold it dorsiflexed. Feel for oscillations between flexion and extension of the foot. That is clonus. Normal=nothing is felt."
+    }
+  },
+  "Quiz_Module_2": {
+    "moduleName": "Cranial Nerve",
+    "questionBank": [
+      {
+        "topic": "cranialNerveOriginsGeneral",
+        "question": "According to the provided text, where do cranial nerves III through XII arise from?",
+        "options": [
+          "The cerebrum",
+          "The brainstem",
+          "The cerebellum",
+          "The rhinencephalon"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "vagusNerveScopeException",
+        "question": "Which cranial nerve is identified as the exception to the rule that they only relate to head and neck structure and function?",
+        "options": [
+          "Vagus Nerve",
+          "Trigeminal Nerve",
+          "Facial Nerve",
+          "Hypoglossal Nerve"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "tuningFork512HzPurpose",
+        "question": "What is the primary reason for using a 512 Hz tuning fork in the cranial nerve exam?",
+        "options": [
+          "Testing vibration sense",
+          "Testing hearing",
+          "Eliciting deep tendon reflexes",
+          "Assessing for temperature sensation"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "tuningFork128HzPurpose",
+        "question": "Which tuning fork is specified for testing vibration due to its 'greater tactile vibration'?",
+        "options": [
+          "512 Hz",
+          "1024 Hz",
+          "256 Hz",
+          "128 Hz"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "cnBasicFunctionsTable",
+        "question": "Based on the provided table of basic functions, what is the role of Cranial Nerve V?",
+        "options": [
+          "Shoulder and neck movements",
+          "Swallowing and rise of the palate",
+          "Corneal reflexes, facial sensation, and jaw movements",
+          "Facial movements"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "olfactoryNerveOriginFunction",
+        "question": "What is the primary sensory function of the olfactory nerve (CN I)?",
+        "options": [
+          "Vision",
+          "Taste",
+          "Sense of smell",
+          "Hearing"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "olfactoryTestSubstances",
+        "question": "Which of the following substances is appropriate for testing the olfactory nerve?",
+        "options": [
+          "Ammonia",
+          "Peppermint",
+          "Menthol",
+          "Coffee"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "olfactoryIrritantsWarning",
+        "question": "Why should substances like peppermint or ammonia NOT be used to test the olfactory nerve?",
+        "options": [
+          "They are too faint to detect.",
+          "They stimulate trigeminal sensory receptors.",
+          "They can permanently damage the olfactory epithelium.",
+          "They only test the sense of taste."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "olfactoryNerveExamSteps",
+        "question": "What is a critical step a patient must perform when testing their sense of smell during the CN I exam?",
+        "options": [
+          "Keep their eyes open",
+          "Breathe through their mouth",
+          "Close their eyes",
+          "Hum a steady tone"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "olfactoryDisorderDefinitions",
+        "question": "What is the term for an olfactory hallucination, where a person smells an odor that is not actually present?",
+        "options": [
+          "Anosmia",
+          "Hyposmia",
+          "Cacosomia",
+          "Phantosomia"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "commonCausesOfOlfactoryDisorders",
+        "question": "Which of the following is listed as a potential post-infective cause of olfactory disorders?",
+        "options": [
+          "Chronic rhinitis",
+          "COVID-19",
+          "Parkinson's disease",
+          "Cocaine use"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "opticNerveOriginFunction",
+        "question": "What is the primary sensory function of the optic nerve (CN II)?",
+        "options": [
+          "Smell",
+          "Hearing",
+          "Vision",
+          "Taste"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "opticNerveExamSteps",
+        "question": "Which of the following is NOT listed as a standard part of the Optic Nerve (CN II) exam?",
+        "options": [
+          "Visual Fields by confrontation",
+          "Fundoscopic exam",
+          "Corneal reflex test",
+          "Snellen - Visual Acuity"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "visualFieldsConfrontationTechnique",
+        "question": "What is the underlying assumption when performing the visual fields by confrontation test?",
+        "options": [
+          "The patient has 20/20 vision.",
+          "The examiner has normal visual fields.",
+          "The room must be brightly lit.",
+          "The patient's pupils must be dilated."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "opticNeuritis",
+        "question": "What is the characteristic feature of optic neuritis, often associated with multiple sclerosis?",
+        "options": [
+          "Progressive peripheral vision loss",
+          "Sudden painless vision loss",
+          "Bitemporal hemianopia",
+          "Central vision loss"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ischemicOpticNeuropathy",
+        "question": "Which of the following features is characteristic of ischemic optic neuropathy?",
+        "options": [
+          "Central vision loss due to inflammation",
+          "Sudden painless vision loss with a pale, swollen optic disc",
+          "Progressive peripheral vision loss with optic disc cupping",
+          "Gradual vision loss with bitemporal hemianopia"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "glaucomaOpticNerveDamage",
+        "question": "What is the primary mechanism of optic nerve damage in glaucoma?",
+        "options": [
+          "Inflammation from an autoimmune response",
+          "Vascular insufficiency",
+          "Increased intraocular pressure",
+          "Compression from a tumor"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "compressiveLesionsCNII",
+        "question": "A compressive lesion such as a pituitary adenoma can cause what specific type of visual field defect?",
+        "options": [
+          "Central vision loss",
+          "Bitemporal hemianopia",
+          "Unilateral vision loss",
+          "Transient visual obscurations"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "oculomotorNerveOriginFunction",
+        "question": "What is the general function of the Oculomotor Nerve (CN III)?",
+        "options": [
+          "Sensory",
+          "Motor",
+          "Both Sensory and Motor",
+          "Autonomic only"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "oculomotorNerveDetailedFunctions",
+        "question": "Which of the following is NOT a function of the Oculomotor Nerve (CN III)?",
+        "options": [
+          "Control of the upper eyelid",
+          "Moving the eye laterally",
+          "Pupillary constriction",
+          "Accommodation & Convergence"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "oculomotorNerveExamSteps",
+        "question": "What is the term for a drooping of the eyelid that may be observed during inspection in a CN III exam?",
+        "options": [
+          "Mydriasis",
+          "Miosis",
+          "Nystagmus",
+          "Ptosis"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ptosisDefinition",
+        "question": "What is the medical term for 'drooping of the eyelid'?",
+        "options": [
+          "Ptosis",
+          "Diplopia",
+          "Strabismus",
+          "Lid lag"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "directConsensualPupillaryResponse",
+        "question": "When shining a light in one eye, observing constriction in the opposite eye confirms what?",
+        "options": [
+          "Only the afferent (CN II) pathway is working",
+          "The strength of the afferent input between the eyes",
+          "That both afferent (CN II) and efferent (CN III) pathways are functioning",
+          "Only the efferent (CN III) pathway is working"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "swingingFlashlightTestPurpose",
+        "question": "What is the primary purpose of the swinging flashlight test?",
+        "options": [
+          "To measure absolute pupillary size",
+          "To check for color blindness",
+          "To detect a Relative Afferent Pupillary Defect (RAPD)",
+          "To assess the consensual response in isolation"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "swingingFlashlightTestSteps",
+        "question": "During the swinging flashlight test, how long should the light be held on one eye before quickly moving to the other?",
+        "options": [
+          "Less than 1 second",
+          "2-3 seconds",
+          "5-6 seconds",
+          "As long as it takes for maximum constriction"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "rapdDefinition",
+        "question": "What is the abnormal response seen in an eye with a Relative Afferent Pupillary Defect (RAPD) when a light is swung to it?",
+        "options": [
+          "The pupil constricts briskly",
+          "The pupil remains fixed in size",
+          "Both pupils paradoxically dilate",
+          "Only the contralateral pupil constricts"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "swingingFlashlightNervesTested",
+        "question": "The swinging flashlight test evaluates the afferent limb (CN II) and the efferent limb (CN III). A problem in which limb is indicated by a Relative Afferent Pupillary Defect (RAPD)?",
+        "options": [
+          "The efferent limb (CN III)",
+          "Both the afferent and efferent limbs equally",
+          "The afferent limb (CN II)",
+          "Neither limb, it points to a midbrain lesion"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "accommodationDefinition",
+        "question": "What is accommodation in the context of vision?",
+        "options": [
+          "The coordinated inward movement of both eyes",
+          "The eye changing refractive power by altering lens shape",
+          "The dilation of the pupil in response to darkness",
+          "The constriction of the pupil in response to light"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "accommodationTest",
+        "question": "How is accommodation typically tested during a clinical exam?",
+        "options": [
+          "By shining a light in the patient's eyes",
+          "By asking the patient to follow a finger in an 'H' pattern",
+          "By asking the patient to alternate looking at a distant object and a near finger",
+          "By touching the cornea with a wisp of cotton"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "accommodationNormalResponse",
+        "question": "What is the normal pupillary response when a patient shifts their gaze from a distant object to a near object?",
+        "options": [
+          "The pupils dilate",
+          "The pupils constrict",
+          "The pupils do not change size",
+          "Only one pupil constricts"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "convergenceDefinition",
+        "question": "What is convergence of the eyes?",
+        "options": [
+          "The change in lens shape to focus on near objects",
+          "The movement of both eyes to look upwards",
+          "The coordinated inward movement of both eyes to focus on a near object",
+          "The constriction of the pupils in response to light"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "convergenceTest",
+        "question": "How is convergence tested during a cranial nerve exam?",
+        "options": [
+          "Asking the patient to look at a distant object",
+          "Moving a finger toward the bridge of the patient's nose",
+          "Shining a light from the side",
+          "Asking the patient to close their eyes tightly"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "convergenceNormalResponse",
+        "question": "Normally, to what distance from the nose should a patient's eyes be able to follow an object during a convergence test?",
+        "options": [
+          "15cm to 20cm",
+          "1cm to 2cm",
+          "10cm to 12cm",
+          "5cm to 8cm"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "accommodationConvergenceCNIII_Mechanism",
+        "question": "Which muscle, innervated by CN III, contracts to adduct the eyes during convergence?",
+        "options": [
+          "Superior rectus",
+          "Lateral rectus",
+          "Medial rectus",
+          "Ciliary muscle"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "diabeticOculomotorPalsy",
+        "question": "What is a key feature of diabetic oculomotor palsy that distinguishes it from some other causes of CN III palsy?",
+        "options": [
+          "It is always painful",
+          "It commonly spares the pupil",
+          "It only causes ptosis without diplopia",
+          "It results in a constricted pupil"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "posteriorCommunicatingArteryA aneurysmEffectCNIII",
+        "question": "What is the classic presentation of a CN III palsy caused by a posterior communicating artery aneurysm?",
+        "options": [
+          "Painless ophthalmoplegia with a constricted pupil",
+          "Painless ophthalmoplegia with a normal pupil",
+          "Painful ophthalmoplegia with a dilated pupil",
+          "Isolated ptosis without ophthalmoplegia"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "uncalHerniationEffectCNIII",
+        "question": "What is the characteristic sign of CN III compression due to uncal herniation?",
+        "options": [
+          "A constricted, reactive pupil",
+          "A fixed, dilated pupil and altered consciousness",
+          "Bilateral ptosis with normal pupils",
+          "Normal eye movements with diplopia"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "adiesTonicPupil",
+        "question": "Which feature is characteristic of an Adie's (Tonic) Pupil?",
+        "options": [
+          "A pupil that reacts briskly to light but not to near stimuli",
+          "A pupil that is abnormally dilated and reacts sluggishly to light",
+          "A small, irregular pupil that does not dilate in the dark",
+          "A normally sized pupil with absent deep tendon reflexes"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "adiesTonicPupilPathophysiology",
+        "question": "Adie's Tonic Pupil results from damage to which structures?",
+        "options": [
+          "Preganglionic parasympathetic fibers in the midbrain",
+          "The optic nerve (CN II)",
+          "Postganglionic parasympathetic fibers from the ciliary ganglion",
+          "Sympathetic fibers originating in the hypothalamus"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "argyllRobertsonPupil",
+        "question": "What is the classic finding in an Argyll Robertson pupil, often associated with neurosyphilis?",
+        "options": [
+          "Pupils constrict to light but not to near stimuli",
+          "Pupils are large and irregular",
+          "Pupils do not constrict to light but constrict briskly to near stimuli",
+          "Pupils are reactive to light but fail to dilate in the dark"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "argyllRobertsonPupilMechanism",
+        "question": "The mechanism for an Argyll Robertson pupil involves a lesion in what part of the brain?",
+        "options": [
+          "The occipital lobe",
+          "The ciliary ganglion",
+          "The pons",
+          "The midbrain affecting pretectal nuclei"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "oculomotorPalsyPresentation",
+        "question": "What is the classic 'down and out' eye position in an oculomotor palsy due to?",
+        "options": [
+          "Overaction of the medial rectus",
+          "Weakness of the levator palpebrae muscle",
+          "Unopposed action of the lateral rectus (CN VI) and superior oblique (CN IV)",
+          "Involvement of parasympathetic fibers causing miosis"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "trochlearNerveOriginFunction",
+        "question": "What is the primary motor function of the Trochlear Nerve (CN IV)?",
+        "options": [
+          "Moving the eye laterally",
+          "Moving the eye down and inward",
+          "Constricting the pupil",
+          "Elevating the eyelid"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "abducensNerveOriginFunction",
+        "question": "Which muscle, responsible for moving the eye laterally, is innervated by the Abducens Nerve (CN VI)?",
+        "options": [
+          "Medial rectus",
+          "Superior oblique",
+          "Lateral rectus",
+          "Inferior rectus"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "eomExamSteps",
+        "question": "When testing the six cardinal directions of gaze, what are you primarily assessing?",
+        "options": [
+          "Visual acuity",
+          "Pupillary light reflex",
+          "Normal conjugate movements",
+          "Color vision"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "eomMuscleInnervation",
+        "question": "Which cranial nerve innervates the superior oblique muscle?",
+        "options": [
+          "CN III (Oculomotor)",
+          "CN IV (Trochlear)",
+          "CN V (Trigeminal)",
+          "CN VI (Abducens)"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "endPointNystagmus",
+        "question": "When is end-point nystagmus considered significant?",
+        "options": [
+          "It is always pathologic",
+          "Only when it occurs with vertical gaze",
+          "Only when it is sustained in central gaze",
+          "It is physiologic and not pathologic"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "pendularNystagmus",
+        "question": "What is the key characteristic of pendular nystagmus?",
+        "options": [
+          "It has a fast and a slow phase",
+          "It consists entirely of slow eye movements",
+          "It is only present at the endpoints of gaze",
+          "It is suppressed by visual fixation"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "vestibularNystagmus",
+        "question": "What is a characteristic of peripheral vestibular nystagmus?",
+        "options": [
+          "It is unaffected by visual fixation",
+          "It is purely vertical",
+          "It is suppressed by visual fixation",
+          "It worsens with gaze toward the side of the lesion"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "gazeEvokedNystagmus",
+        "question": "Vertical movement in gaze-evoked nystagmus often indicates disease in which part of the brain?",
+        "options": [
+          "Frontal lobe",
+          "Pons",
+          "Brainstem and/or cerebellum",
+          "Temporal lobe"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "downBeatNystagmus",
+        "question": "Down-beat nystagmus, when present on down-and-out gaze, is suggestive of a lesion at what location?",
+        "options": [
+          "The optic chiasm",
+          "The pons",
+          "The cavernous sinus",
+          "The foramen magnum"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "abducensPalsyDescriptionTitledCN4",
+        "question": "A palsy affecting the lateral rectus muscle results in a limited ability to perform which eye movement?",
+        "options": [
+          "Adduction (moving inward)",
+          "Abduction (moving outward)",
+          "Supraduction (moving upward)",
+          "Intorsion (rotating inward)"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "trochlearPalsyDescriptionTitledCN6",
+        "question": "A palsy of the superior oblique muscle, as described in the text, leads to which specific type of double vision?",
+        "options": [
+          "Horizontal diplopia",
+          "Vertical diplopia",
+          "Diplopia only at a distance",
+          "Diplopia only with convergence"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "trigeminalNerveOriginFunction",
+        "question": "What are the two primary functions of the Trigeminal Nerve (CN V)?",
+        "options": [
+          "Taste and facial expression",
+          "Vision and hearing",
+          "Motor for mastication and facial sensation",
+          "Swallowing and head rotation"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "trigeminalMotorExam",
+        "question": "How is the motor function of the trigeminal nerve assessed?",
+        "options": [
+          "Asking the patient to smile and frown",
+          "Asking the patient to clench their teeth while palpating the masseter and temporalis muscles",
+          "Testing the gag reflex",
+          "Touching the cornea with a wisp of cotton"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "trigeminalSensoryExamOverview",
+        "question": "Which of the following is used to test the corneal reflex, a component of the CN V sensory exam?",
+        "options": [
+          "A bright light",
+          "A tuning fork",
+          "A wisp of cotton",
+          "A drop of saline"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "trigeminalSharpDullTest",
+        "question": "When testing sharp-dull sensation on the face, which area corresponds to the V2 (Maxillary) division of the trigeminal nerve?",
+        "options": [
+          "Forehead",
+          "Cheek",
+          "Jaw",
+          "Chin"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "trigeminalLightTouchTest",
+        "question": "What is the first step an examiner should take before testing a patient's light touch sensation on the face?",
+        "options": [
+          "Ask the patient to close their eyes",
+          "Dim the room lights",
+          "Explain the test and obtain consent",
+          "Apply a cold stimulus as a control"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "trigeminalNeuralgia",
+        "question": "Which of the following descriptions best fits the pain of trigeminal neuralgia?",
+        "options": [
+          "A dull, constant ache",
+          "A sudden, shock-like pain lasting seconds to minutes",
+          "A throbbing pain that worsens with lying down",
+          "A mild burning sensation"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "herpesZosterOnCNV",
+        "question": "When Herpes Zoster (Shingles) affects the trigeminal nerve, which branch is most often involved?",
+        "options": [
+          "V1 (ophthalmic)",
+          "V2 (maxillary)",
+          "V3 (mandibular)",
+          "All branches are affected equally"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "facialNerveOriginFunction",
+        "question": "Which of the following is a sensory function of the Facial Nerve (CN VII)?",
+        "options": [
+          "Sensation from the forehead",
+          "Taste from the anterior 2/3 of the tongue",
+          "Hearing and balance",
+          "Sensation from the pharynx"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "facialNerveMotorExam",
+        "question": "Which of the following actions would be used to test the motor function of the facial nerve (CN VII)?",
+        "options": [
+          "Shrugging the shoulders",
+          "Clenching the jaw",
+          "Squeezing the eyes shut",
+          "Swallowing"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "facialNerveSensoryExam",
+        "question": "Which two tastes are specifically mentioned for testing the sensory function of the Facial Nerve (CN VII)?",
+        "options": [
+          "Sweet and salty",
+          "Sour and bitter",
+          "Sweet and bitter",
+          "Salty and sour"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "bellsPalsy",
+        "question": "What is a key feature of Bell's Palsy?",
+        "options": [
+          "Bilateral facial paralysis",
+          "Unilateral facial paralysis involving both the upper and lower face",
+          "Facial paralysis that spares the forehead",
+          "Facial paralysis accompanied by a vesicular rash"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ramsayHuntSyndrome",
+        "question": "What clinical feature differentiates Ramsay Hunt Syndrome from Bell's Palsy?",
+        "options": [
+          "Sudden onset",
+          "Unilateral paralysis",
+          "A painful vesicular rash in the ear or mouth",
+          "Involvement of the upper and lower face"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "strokeEffectOnCNVII",
+        "question": "Besides Bell's Palsy and Ramsay Hunt Syndrome, what is another potential cause of facial nerve dysfunction listed?",
+        "options": [
+          "Trigeminal Neuralgia",
+          "Acoustic Neuroma",
+          "Stroke",
+          "Glossopharyngeal Neuralgia"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "vestibulocochlearNerveOriginFunction",
+        "question": "What is the sensory function of the Vestibulocochlear Nerve (CN VIII)?",
+        "options": [
+          "Smell",
+          "Vision",
+          "Taste",
+          "Hearing"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "vestibulocochlearNerveExamSteps",
+        "question": "Which of the following is a method for performing a gross hearing test?",
+        "options": [
+          "Using a 128 Hz tuning fork",
+          "Asking the patient to say 'ahh'",
+          "Whispering while occluding the contralateral ear",
+          "Testing for nystagmus"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "rinneTestInterpretation",
+        "question": "In a patient with conductive hearing loss, what would be the expected result of a Rinne test?",
+        "options": [
+          "AC > BC",
+          "BC > AC",
+          "AC = BC",
+          "Neither AC nor BC is heard"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "sensorineuralHearingLoss",
+        "question": "Which of the following is listed as a cause of sensorineural hearing loss?",
+        "options": [
+          "Displacement of otoliths",
+          "Inflammation of the middle ear",
+          "Aging (presbycusis)",
+          "Excessive ear wax"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "acousticNeuroma",
+        "question": "What is the typical presentation of an acoustic neuroma (vestibular schwannoma)?",
+        "options": [
+          "Sudden bilateral hearing loss",
+          "Brief vertigo triggered by head movement",
+          "Progressive unilateral hearing loss, tinnitus, and imbalance",
+          "Episodic vertigo with fluctuating symptoms"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "labyrinthitis",
+        "question": "What are the characteristic symptoms of labyrinthitis?",
+        "options": [
+          "Sudden hearing loss plus vertigo",
+          "Vertigo without hearing loss",
+          "Progressive hearing loss and tinnitus",
+          "Brief vertigo with head movement"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "vestibularNeuritis",
+        "question": "What symptom is specifically noted as being preserved in vestibular neuritis, distinguishing it from labyrinthitis?",
+        "options": [
+          "Balance",
+          "Hearing",
+          "Vision",
+          "Taste"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "menieresDisease",
+        "question": "Which of the following is characteristic of Meniere's Disease?",
+        "options": [
+          "Constant, non-fluctuating symptoms",
+          "Hearing loss without vertigo",
+          "Brief vertigo triggered only by head movement",
+          "Episodic vertigo, tinnitus, and fluctuating hearing loss"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "bppv",
+        "question": "What is the cause of Benign Paroxysmal Positional Vertigo (BPPV)?",
+        "options": [
+          "Inflammation of the vestibular nerve",
+          "A benign tumor on CN VIII",
+          "Displacement of otoliths in semicircular canals",
+          "Endolymphatic hydrops"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "glossopharyngealNerveOriginFunction",
+        "question": "What is the sensory function of the Glossopharyngeal Nerve (CN IX)?",
+        "options": [
+          "Taste from the anterior 2/3 of the tongue",
+          "Facial sensation",
+          "Taste from the posterior 1/3 of the tongue",
+          "Taste at the epiglottis"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "glossopharyngealNerveExam",
+        "question": "Besides asking a patient to swallow, which other test is part of the CN IX exam?",
+        "options": [
+          "Testing shoulder shrug strength",
+          "Observing for facial asymmetry",
+          "Checking for uvula deviation",
+          "Testing taste on the posterior 1/3 of the tongue"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "glossopharyngealNeuralgia",
+        "question": "What action is described as a common trigger for the sharp, stabbing pain of glossopharyngeal neuralgia?",
+        "options": [
+          "Looking at a bright light",
+          "Hearing a loud noise",
+          "Swallowing",
+          "Turning the head quickly"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "vagusNerveOriginFunction",
+        "question": "In addition to swallowing and talking, the Vagus nerve (CN X) has motor function for which structures?",
+        "options": [
+          "Muscles of facial expression",
+          "The trapezius and SCM muscles",
+          "The heart, bronchi, and GI tract",
+          "The lateral rectus muscle of the eye"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "vagusNerveExam",
+        "question": "What is an examiner looking for when they ask a patient to say 'ahh' during a CN X exam?",
+        "options": [
+          "Tongue fasciculations",
+          "Symmetrical rise of the soft palate and uvula",
+          "The ability to make a sound",
+          "Strength of the masseter muscles"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "vagusNerveLesionSigns",
+        "question": "In the case of a unilateral Vagus nerve lesion, which way would the uvula be expected to deviate?",
+        "options": [
+          "Toward the affected side",
+          "Away from the affected side",
+          "The uvula does not deviate",
+          "The uvula points downward"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "gastroparesis",
+        "question": "Gastroparesis is a condition of delayed gastric emptying due to dysfunction of which nerve?",
+        "options": [
+          "Phrenic nerve",
+          "Hypoglossal nerve",
+          "Trigeminal nerve",
+          "Vagus nerve"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "vasovagalSyncope",
+        "question": "What is the underlying mechanism of vasovagal syncope?",
+        "options": [
+          "Underactivation of the vagal reflex",
+          "Overactivation of the vagal reflex",
+          "Compression of the vagus nerve",
+          "A lesion in the medulla"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "vocalCordParalysis",
+        "question": "Vocal cord paralysis leading to hoarseness and a breathy voice often involves which specific branch of the vagus nerve?",
+        "options": [
+          "The pharyngeal branch",
+          "The superior laryngeal nerve",
+          "The recurrent laryngeal nerve",
+          "The auricular branch"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "spinalAccessoryNerveOriginFunction",
+        "question": "The spinal root of the Spinal Accessory Nerve (CN XI) innervates which two muscles?",
+        "options": [
+          "Masseter and Temporalis",
+          "Medial and Lateral Pterygoids",
+          "Trapezius and Sternocleidomastoid (SCM)",
+          "Digastric and Stylohyoid"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "spinalAccessoryNerveExam",
+        "question": "Which of the following actions is performed to test the function of the Spinal Accessory Nerve (CN XI)?",
+        "options": [
+          "Smiling and showing teeth",
+          "Swallowing a sip of water",
+          "Turning the head against resistance",
+          "Pushing the tongue against the cheek"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "spinalAccessoryNervePalsy",
+        "question": "What is a characteristic symptom of a spinal accessory nerve palsy?",
+        "options": [
+          "Facial droop",
+          "Hoarseness",
+          "Shoulder droop",
+          "Tongue deviation"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "hypoglossalNerveOriginFunction",
+        "question": "What is the motor function of the Hypoglossal Nerve (CN XII)?",
+        "options": [
+          "Tongue movement",
+          "Facial expression",
+          "Swallowing",
+          "Jaw movement"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "hypoglossalNerveExam",
+        "question": "What is an examiner looking for when inspecting the tongue during a CN XII exam?",
+        "options": [
+          "Color and texture",
+          "The gag reflex",
+          "Taste sensation",
+          "Fasciculations"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "hypoglossalNervePalsySign",
+        "question": "In a patient with a unilateral lower motor neuron lesion of the hypoglossal nerve, which way does the tongue deviate upon protrusion?",
+        "options": [
+          "Toward the affected side",
+          "Away from the affected side",
+          "The tongue cannot be protruded",
+          "Superiorly, toward the nose"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "motorNeuronDiseaseCNXII",
+        "question": "What are the characteristic findings related to CN XII in a patient with a motor neuron disease like ALS?",
+        "options": [
+          "Tongue deviation and loss of taste",
+          "Progressive tongue atrophy and fasciculations",
+          "A painful tongue with normal strength",
+          "A coated tongue with normal movement"
+        ],
+        "correctAnswer": 1
+      }
+    ],
+    "topicTextMap": {
+      "cranialNerveOriginsGeneral": "There are 12 cranial nerves. Nerves I & II emerge from the cerebrum, while nerves III - XII arise from the brainstem.",
+      "vagusNerveScopeException": "All cranial nerves, EXCEPT VAGUS NERVE, relate to only head and neck structure and function.",
+      "tuningFork512HzPurpose": "A 512 Hz tuning fork is used for hearing tests as it provides the best balance of time of tone decay and tactile vibration.",
+      "tuningFork128HzPurpose": "A 128 Hz tuning fork is used for testing vibration because it provides greater tactile vibration.",
+      "cnBasicFunctionsTable": "I: Smell. II: Visual acuity, visual fields. II, III: Pupillary reactions. III, IV, VI: Extraocular movements. V: Corneal reflexes, facial sensation, and jaw movements. VII: Facial movements. VIII: Hearing. IX, X: Swallowing and rise of the palate, gag reflex. V, VII, X, XII: Voice and speech. XI: Shoulder and neck movements. XII: Tongue symmetry, position, and movements.",
+      "olfactoryNerveOriginFunction": "Origination: rhinencephalon. Function: sensory, sense of smell.",
+      "olfactoryTestSubstances": "Test the olfactory nerve with substances like coffee, cinnamon, and chocolate.",
+      "olfactoryIrritantsWarning": "Irritating substances like peppermint, camphor, ammonia, and menthol stimulate trigeminal sensory receptors. Do not use these to test the olfactory nerve.",
+      "olfactoryNerveExamSteps": "First, inspect the nasal cavity for obstruction. Perform a sniff test by occluding one nostril at a time. To test the sense of smell, ask the patient to close their eyes and identify substances like coffee or cinnamon, testing each side separately.",
+      "olfactoryDisorderDefinitions": "Anosmia: total loss of smell. Hyposmia: partial loss of smell. Hyperosmia: exaggerated sensitivity. Dyosmia: distorted sense of smell. Phantosomia: olfactory hallucination (smelling an odor that is not actually there). Cacosomia: smelling something burned, foul, or rotten.",
+      "commonCausesOfOlfactoryDisorders": "Common causes include post-traumatic (head injury, facial trauma, cranial surgery), post-infective (viral illnesses, COVID-19), neurodegenerative diseases (Parkinson's, Alzheimer's), sub-frontal lobe tumors or abscesses, seizure disorders, nasal/sinus disorders (chronic rhinitis, polyps), smoking, and cocaine use.",
+      "opticNerveOriginFunction": "Origination: diencephalon. Function: sensory, vision.",
+      "opticNerveExamSteps": "The exam includes: 1) Snellen for Visual Acuity, 2) Color Vision, 3) Visual Fields by confrontation, and 4) Fundoscopic exam.",
+      "visualFieldsConfrontationTechnique": "During visual fields by confrontation, the examiner closes their left eye to compare the field of their right eye with the patient's left eye. The assumption is that the examiner has normal visual fields, so both should see the fingers at roughly the same distance.",
+      "opticNeuritis": "Cause: Inflammation, often autoimmune (e.g., multiple sclerosis). Features: central vision loss.",
+      "ischemicOpticNeuropathy": "Cause: Vascular insufficiency (e.g., from giant cell arteritis, diabetes, hypertension). Features: Sudden painless vision loss, pale and swollen optic disc.",
+      "glaucomaOpticNerveDamage": "Cause: Increased intraocular pressure damaging the optic nerve. Features: Progressive peripheral vision loss, optic disc cupping.",
+      "compressiveLesionsCNII": "Cause: Tumors (e.g., pituitary adenoma), aneurysms, or abscesses. Features: Gradual vision loss, visual field defects such as bitemporal hemianopia.",
+      "oculomotorNerveOriginFunction": "Origination: midbrain of the brainstem. Function: Motor.",
+      "oculomotorNerveDetailedFunctions": "The oculomotor nerve controls the upper eyelid (opening and closing the eye), pupillary reflex (constriction), accommodation, and convergence.",
+      "oculomotorNerveExamSteps": "The exam includes measuring pupillary size and symmetry, inspecting eyelids for symmetry (ptosis = drooping), testing direct and consensual light response, accommodation & convergence, and extraocular eye movements (Medial Rectus, Superior Rectus, Inferior Rectus, Inferior Oblique).",
+      "ptosisDefinition": "Ptosis is the medical term for drooping of the eyelid.",
+      "directConsensualPupillaryResponse": "The basic light reflex test involves shining a light in one eye and observing direct constriction in that eye and consensual constriction in the opposite eye. It confirms that both the afferent (CN II) and efferent (CN III) pathways are functioning in each eye but does not compare the strength of the afferent input between them.",
+      "swingingFlashlightTestPurpose": "This is a dynamic comparison test. You swing the light back and forth between eyes every 2-3 seconds, watching how the pupils respond. It is used to detect a Relative Afferent Pupillary Defect (RAPD), which means one eye's optic nerve is transmitting less light information than the other. A standard direct/consensual test might miss this asymmetry.",
+      "swingingFlashlightTestSteps": "1. Dim the room lights. 2. Ask the patient to fixate on a distant target. 3. Shine a light into one eye for 2-3 seconds. 4. Quickly swing the light to the other eye. 5. Repeat several times, observing direct and consensual pupillary responses.",
+      "rapdDefinition": "An abnormal response, or Relative Afferent Pupillary Defect (RAPD), is when both pupils paradoxically dilate when light is moved to the affected eye.",
+      "swingingFlashlightNervesTested": "The swinging flashlight test evaluates Cranial Nerve II (Optic Nerve), the afferent limb that detects light, and Cranial Nerve III (Oculomotor Nerve), the efferent limb that carries the motor signal for pupil constriction.",
+      "accommodationDefinition": "Accommodation is the mechanism by which the eye changes its refractive power by altering the shape of the lens to focus on objects at variable distances.",
+      "accommodationTest": "To test accommodation, hold your finger about 10cm from the patient's nose. Ask them to alternate looking into the distance and at your finger. Observe the pupillary response in each eye.",
+      "accommodationNormalResponse": "Normally the pupils are dilated while looking into the distance and constricted when looking at your finger.",
+      "convergenceDefinition": "Convergence is the coordinated inward movement of both eyes toward each other, allowing you to focus on objects that are close to your face.",
+      "convergenceTest": "To test convergence, ask the patient to follow your finger or a pencil as you move it in toward the bridge of the nose.",
+      "convergenceNormalResponse": "The converging eyes normally follow the object to within 5cm to 8cm of the nose.",
+      "accommodationConvergenceCNIII_Mechanism": "CN III enables accommodation and convergence by: 1. Adjusting the lens via the ciliary muscle. 2. Causing pupil constriction (miosis) via the sphincter pupillae muscle. 3. Adducting the eyes by contracting the medial rectus muscles.",
+      "diabeticOculomotorPalsy": "Diabetic Oculomotor Palsy is caused by microvascular ischemia, commonly spares the pupil, and presents with ptosis, diplopia, and a 'down and out' eye position.",
+      "posteriorCommunicatingArteryAneurysmEffectCNIII": "A Posterior Communicating Artery Aneurysm compresses superficial parasympathetic fibers of CN III, leading to painful ophthalmoplegia and a dilated pupil.",
+      "uncalHerniationEffectCNIII": "Uncal herniation occurs when a brain shift compresses CN III at the tentorial notch, resulting in a fixed, dilated pupil and altered consciousness.",
+      "adiesTonicPupil": "Adie's Syndrome features a tonic pupil (one pupil is abnormally dilated and reacts sluggishly to light but better to near stimuli), deep tendon areflexia (absent Achilles/patellar reflexes), and possible autonomic dysfunction.",
+      "adiesTonicPupilPathophysiology": "Adie's Tonic Pupil is caused by postganglionic parasympathetic denervation with aberrant regeneration, resulting from damage to postganglionic parasympathetic fibers from the ciliary ganglion in the CN III pathway.",
+      "argyllRobertsonPupil": "Argyll Robertson pupils are small, irregular pupils that do not constrict to light but constrict briskly to near stimuli (accommodation) and fail to dilate in the dark. The near response is brisk, not tonic like in Adie's pupil.",
+      "argyllRobertsonPupilMechanism": "The mechanism is a midbrain lesion (often from neurosyphilis) affecting the pretectal nuclei, which are involved in the afferent limb of the light reflex. The CN III efferent pathway is intact, but central integration of the light reflex is impaired.",
+      "oculomotorPalsyPresentation": "Clinical presentation of oculomotor palsy includes ptosis (drooping eyelid), a 'down and out' eye position (from unopposed CN VI and IV action), diplopia, mydriasis (dilated pupil if parasympathetic fibers are involved), and impaired accommodation.",
+      "trochlearNerveOriginFunction": "Origination: midbrain. Function: Motor, controls the superior oblique muscle to move the eye down and inward.",
+      "abducensNerveOriginFunction": "Origination: pons. Function: Motor, controls the lateral rectus muscle to move the eye laterally.",
+      "eomExamSteps": "To test extraocular movements (EOM), test the six cardinal directions by having the patient follow your finger in an 'H' or bowtie shape. Assess for normal conjugate movements, nystagmus, and lid lag.",
+      "eomMuscleInnervation": "Cranial nerve III innervates the Medial, Superior, and Inferior Rectus, and the Inferior Oblique. CN IV innervates the Superior Oblique. CN VI innervates the Lateral Rectus.",
+      "endPointNystagmus": "End-point nystagmus is physiologic, not pathologic, and only occurs at the very far endpoints of the gaze direction.",
+      "pendularNystagmus": "Pendular nystagmus, which can be congenital or due to MS, consists of entirely slow eye movements with no fast phase, like the motion of a swing.",
+      "vestibularNystagmus": "Peripheral vestibular nystagmus has horizontal and rotary components and is suppressed by visual fixation. It improves with gaze toward the lesion and worsens with gaze to the opposite side. Central nystagmus is more variable and unaffected by fixation.",
+      "gazeEvokedNystagmus": "Gaze-evoked nystagmus occurs when a patient holds their gaze in a certain location. It is most often induced by ethanol or drugs. If vertical movement is present, it often indicates brainstem and/or cerebellar disease.",
+      "downBeatNystagmus": "Down-beat nystagmus, when present on down-and-out gaze, is suggestive of a lesion at the Foramen Magnum, such as a Chiari malformation.",
+      "abducensPalsyDescriptionTitledCN4": "Abducens Palsy (incorrectly titled as CN IV Palsy) affects the lateral rectus muscle. When CN VI is impaired, the eye drifts inward (esotropia). Clinical features include horizontal diplopia worse on the affected side, esotropia, limited abduction, and a compensatory head turn toward the affected side.",
+      "trochlearPalsyDescriptionTitledCN6": "Trochlear Palsy (incorrectly titled as CN VI Palsy) affects the superior oblique muscle. The clinical presentation includes vertical diplopia (making it hard to read or walk down stairs), torsional diplopia (twisted view), a head tilt away from the affected eye, and hypertropia (affected eye appears higher).",
+      "trigeminalNerveOriginFunction": "Origination: Pons. Function: Motor for mastication and Sensory for facial sensations.",
+      "trigeminalMotorExam": "To test the motor function of CN V, ask the patient to clench their teeth and palpate the masseter and temporalis muscles for tone.",
+      "trigeminalSensoryExamOverview": "To test the sensory function of CN V, assess all three divisions (V1, V2, V3) side-to-side for sharp-dull and light touch. The corneal reflex is tested by touching the cornea with a wisp of cotton, with blinking being a normal reaction.",
+      "trigeminalSharpDullTest": "To assess pain perception, use a sharp stimulus (e.g., broken Q-tip end) on the forehead (V1), cheek (V2), and jaw (V3). First, explain the test, get consent, and demonstrate 'sharp' and 'dull' on the patient's hand. Use a dull stimulus intermittently as a control and compare sides.",
+      "trigeminalLightTouchTest": "To assess light touch, use a wisp of cotton on the forehead (V1), cheek (V2), and jaw (V3). First, explain the test, get consent, and demonstrate the sensation on the patient's hand. Compare sides.",
+      "trigeminalNeuralgia": "Trigeminal neuralgia (tic douloureux) is an extremely painful condition characterized by a sudden onset of severe, shock-like, burning, or throbbing pain that can last seconds to minutes and recur frequently. It can be triggered by light wind or chewing. It's most commonly from microvascular compression of the nerve.",
+      "herpesZosterOnCNV": "Herpes Zoster (Shingles) on CN V is a reactivation of the varicella-zoster virus, causing a painful vesicular rash, often in the V1 (ophthalmic) branch, with a risk of postherpetic neuralgia.",
+      "facialNerveOriginFunction": "Origination: Pons. Function: Sensory for taste from the anterior 2/3 of the tongue, and Motor for muscles of facial expression, lacrimation, and salivation.",
+      "facialNerveMotorExam": "To test motor function of CN VII, inspect for facial asymmetry and ask the patient to raise eyebrows, squeeze eyes shut, wrinkle forehead, frown, smile, and show their teeth, observing for tics or asymmetry.",
+      "facialNerveSensoryExam": "To test sensory function of CN VII, test taste on the anterior 2/3 of the tongue with sweet and salty substances. Test one area at a time and provide a sip of water between tests.",
+      "bellsPalsy": "Bell's Palsy is a sudden, unilateral facial paralysis, often linked to HSV-1. It involves the upper and lower face and may include taste loss and a dry eye.",
+      "ramsayHuntSyndrome": "Ramsay Hunt Syndrome is caused by reactivation of the varicella-zoster virus and presents with facial paralysis plus a painful vesicular rash in the ear or mouth. It often includes hearing loss and vertigo.",
+      "strokeEffectOnCNVII": "Other causes of facial nerve disorders include Stroke and Multiple Sclerosis.",
+      "vestibulocochlearNerveOriginFunction": "The Vestibulocochlear Nerve (CN VIII), also known as the Acoustic nerve, originates between the pons and medulla and has a sensory function for hearing.",
+      "vestibulocochlearNerveExamSteps": "To perform a gross hearing test, first inspect the ear, then occlude the contralateral ear and use a watch tick, rubbing fingers together, or a whisper. If hearing is diminished, determine if it is conductive or sensorineural hearing loss.",
+      "rinneTestInterpretation": "The Rinne test is for conduction. Normal is AC > BC (Air Conduction greater than Bone Conduction). Conductive loss is BC > AC. Nerve deafness is AC > BC, but the sound stops much earlier.",
+      "sensorineuralHearingLoss": "Sensorineural hearing loss is caused by damage to hair cells or cochlear nerve fibers. Common causes are aging (presbycusis), noise exposure, and ototoxic drugs (e.g., aminoglycosides).",
+      "acousticNeuroma": "An acoustic neuroma (Vestibular Schwannoma) is a benign tumor at the cerebellopontine angle that causes progressive unilateral hearing loss, tinnitus, and imbalance.",
+      "labyrinthitis": "Labyrinthitis is an inflammation of the inner ear, often post-viral, causing sudden hearing loss plus vertigo.",
+      "vestibularNeuritis": "Vestibular neuritis is an inflammation of the vestibular nerve, causing acute vertigo, nausea, and imbalance, but hearing is preserved.",
+      "menieresDisease": "Meniere's Disease is caused by endolymphatic hydrops and results in episodic vertigo, tinnitus, and hearing loss, with fluctuating, often unilateral symptoms.",
+      "bppv": "Benign Paroxysmal Positional Vertigo (BPPV) is caused by the displacement of otoliths in the semicircular canals, resulting in brief vertigo triggered by head movement.",
+      "glossopharyngealNerveOriginFunction": "Origination: Medulla. Function: Motor for muscles of the throat (swallowing) and Sensory for taste on the posterior 1/3 of the tongue.",
+      "glossopharyngealNerveExam": "To test CN IX, ask the patient to swallow and test taste sensation on the posterior 1/3 of the tongue (bitter, sour). The gag reflex is not checked on awake patients but is important in unconscious patients.",
+      "glossopharyngealNeuralgia": "Glossopharyngeal neuralgia is characterized by sharp, stabbing pain in the throat, tonsil, tongue, or ear, triggered by swallowing, chewing, or coughing. It may cause bradycardia or syncope and is usually caused by a tumor or vascular anomaly.",
+      "vagusNerveOriginFunction": "Origination: Medulla. Function: Motor for swallowing, talking, coughing, and organs like the heart, bronchi, and GI tract. Sensory for taste at the epiglottis.",
+      "vagusNerveExam": "To test CN X, check for symmetrical rise of the soft palate and uvula when the patient says 'ahh' and listen to the quality of the patient's voice.",
+      "vagusNerveLesionSigns": "Lesions of the vagus nerve can cause dysphagia (difficulty swallowing), dysarthria (difficulty articulating words), flattening of the palatal arch, and deviation of the uvula away from the affected side.",
+      "gastroparesis": "Gastroparesis is delayed gastric emptying due to vagal dysfunction. Symptoms include nausea, vomiting, bloating, and early satiety. Causes include diabetes, viral infections, surgery, and scleroderma.",
+      "vasovagalSyncope": "Vasovagal syncope is a sudden drop in heart rate and blood pressure causing fainting. It is triggered by pain, stress, heat, or prolonged standing and is caused by an overactivation of the vagal reflex.",
+      "vocalCordParalysis": "Vocal cord paralysis often involves the recurrent laryngeal nerve. Symptoms include hoarseness, a breathy voice, and risk of aspiration. It can be caused by surgery (thyroid, cardiac), tumors, or trauma.",
+      "spinalAccessoryNerveOriginFunction": "Origination: Medulla (two parts). The spinal root innervates the Trapezius and SCM, while the bulbar root becomes part of the Vagus nerve. Its function is motor control of the SCM and trapezius for head rotation and shoulder shrug.",
+      "spinalAccessoryNerveExam": "To test CN XI, assess the SCM by having the patient turn their head against resistance, and assess the trapezius by having them perform a shoulder shrug.",
+      "spinalAccessoryNervePalsy": "Spinal Accessory Nerve Palsy causes weakness in the sternocleidomastoid and trapezius muscles. Symptoms include shoulder droop, difficulty shrugging, and impaired head rotation.",
+      "hypoglossalNerveOriginFunction": "Origination: Medulla. Function: Motor control of the tongue.",
+      "hypoglossalNerveExam": "To test CN XII, listen to the patient's voice, inspect the tongue for fasciculations and midline symmetry, and have them push their tongue against their cheek.",
+      "hypoglossalNervePalsySign": "A unilateral lower motor neuron (LMN) lesion of the hypoglossal nerve causes the tongue to deviate toward the affected side.",
+      "motorNeuronDiseaseCNXII": "In motor neuron disease (e.g., ALS), signs related to CN XII include progressive tongue atrophy and fasciculations, with early bulbar signs like dysarthria and dysphagia."
+    }
+  },
+  "Quiz_Module_3": {
+   "moduleName": "Mental Status",
+    "questionBank": [
+      {
+        "topic": "MentalStatusExamDefinition",
+        "question": "What is the definition of a Mental Status Examination (MSE)?",
+        "options": [
+          "A long-term analysis of a patient's psychological history.",
+          "A method to cure psychological disorders.",
+          "A structured way of observing and describing psychological functioning at a given point in time.",
+          "An informal chat to understand a patient's mood."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MentalStatusExamInformationGathering",
+        "question": "How is the information for a Mental Status Exam typically gathered?",
+        "options": [
+          "Only through a formal, scheduled psychological test.",
+          "By asking a standard set of 10 questions at the end of a visit.",
+          "Through direct and indirect observations assessed throughout every patient encounter.",
+          "Exclusively from family member reports."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MentalStatusExamUsefulness",
+        "question": "In which of the following scenarios is the Mental Status Exam particularly useful?",
+        "options": [
+          "For treating acute physical injuries.",
+          "For monitoring the progression of symptoms in a patient with dementia.",
+          "For diagnosing cardiovascular diseases.",
+          "For prescribing antibiotics for an infection."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MiniMentalStateExaminationDefinition",
+        "question": "What is the Mini-Mental State Examination (MMSE)?",
+        "options": [
+          "A 100-point questionnaire for assessing physical fitness.",
+          "A 30-point questionnaire used to measure cognitive impairment.",
+          "A test to measure a patient's emotional intelligence.",
+          "A brief interview about a patient's family history."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MiniMentalStateExaminationPurpose",
+        "question": "What is a frequent use of the Mini-Mental State Examination (MMSE)?",
+        "options": [
+          "To determine a patient's blood type.",
+          "To assess the risk of developing diabetes.",
+          "For screening for dementia and its progression.",
+          "To measure a patient's hearing and vision."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "LevelOfConsciousnessDefinition",
+        "question": "Which of the following defines 'level of consciousness'?",
+        "options": [
+          "The ability to recall past events.",
+          "Awareness of your surroundings.",
+          "The logic and coherence of thought.",
+          "The emotion that impacts a person's view."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MemoryDefinition",
+        "question": "In the context of a mental status exam, what does 'memory' refer to?",
+        "options": [
+          "Focusing on a specific task.",
+          "Awareness of one's own identity.",
+          "Registering and recording information.",
+          "The observable feeling or tone of a person."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "RecentMemoryDefinition",
+        "question": "'Recent memory' is another term for which type of memory?",
+        "options": [
+          "Long term memory",
+          "Episodic memory",
+          "Procedural memory",
+          "Short term memory"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "RemoteMemoryDefinition",
+        "question": "'Remote memory' is synonymous with which type of memory?",
+        "options": [
+          "Short term memory",
+          "Working memory",
+          "Long term memory",
+          "Sensory memory"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AttentionDefinition",
+        "question": "What is the definition of 'attention' in a mental status exam?",
+        "options": [
+          "Awareness of personal identity, place, and time.",
+          "Registering and recording information.",
+          "The logic and coherence of thoughts.",
+          "The ability to focus or concentrate on a task or activity."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "OrientationDefinition",
+        "question": "What does 'orientation' refer to in a mental status exam?",
+        "options": [
+          "The patient's preferred direction of travel.",
+          "The patient's sensory awareness of objects.",
+          "The patient's awareness of personal identity, place, and time.",
+          "The patient's ability to calculate numbers."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "PerceptionDefinition",
+        "question": "How is 'perception' defined in the context of the MSE?",
+        "options": [
+          "The process of registering and recording information.",
+          "The awareness of one's own symptoms as normal or abnormal.",
+          "The logic and coherence of one's thoughts.",
+          "Sensory awareness of objects and internal stimuli like dreams or hallucinations."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ThoughtProcessesDefinition",
+        "question": "What aspect of a patient's thinking does 'Thought Processes' evaluate?",
+        "options": [
+          "WHAT the patient is thinking about, such as their worries.",
+          "HOW the patient thinks, in terms of logic, coherence, and relevance.",
+          "The patient's awareness of their own symptoms.",
+          "The patient's ability to make decisions."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ThoughtContentDefinition",
+        "question": "'Thought Content' is primarily concerned with which aspect of a patient's thinking?",
+        "options": [
+          "The fluency and rate of their speech.",
+          "The vocabulary and grammar they use.",
+          "WHAT the patient thinks about, including insight and judgment.",
+          "HOW the patient's thoughts are organized and connected."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "InsightDefinition",
+        "question": "What is the definition of 'insight' in a mental status exam?",
+        "options": [
+          "The process of making a decision.",
+          "The observable feeling or tone of the patient.",
+          "The logic and relevance of thoughts.",
+          "The awareness of one's symptoms or behaviors as normal or abnormal."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "JudgementDefinition",
+        "question": "Which of the following best defines 'judgement'?",
+        "options": [
+          "The process of evaluating and comparing options when deciding on a course of action.",
+          "The awareness of one's own identity and location.",
+          "The ability to comprehend and express words.",
+          "The sensory awareness of external objects."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "AffectDefinition",
+        "question": "In a mental status exam, what does 'affect' refer to?",
+        "options": [
+          "The patient's underlying, sustained emotion.",
+          "The observable feeling or tone expressed through voice, facial expression, and demeanor.",
+          "The logic and coherence of the patient's thoughts.",
+          "The patient's awareness of their own illness."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MoodDefinition",
+        "question": "What is 'mood' defined as in the context of a mental status exam?",
+        "options": [
+          "The observable expression of feeling via facial expressions.",
+          "The ability to focus on a single task.",
+          "An emotion that impacts a person's view.",
+          "The process of making sound decisions."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "LanguageDefinition",
+        "question": "Which set of abilities does the term 'language' encompass in an MSE?",
+        "options": [
+          "Vocabulary, fund of knowledge, and abstract thinking.",
+          "Focus, concentration, and task completion.",
+          "Reception, expression, and comprehension of words.",
+          "Awareness of identity, place, and time."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "HigherCognitiveFunctionsDefinition",
+        "question": "Which of the following is considered a 'Higher Cognitive Function'?",
+        "options": [
+          "Awareness of surroundings.",
+          "Abstract thinking.",
+          "Registering information.",
+          "Sensory awareness of objects."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MSEComponents",
+        "question": "Which of the following is NOT listed as one of the five main components of the MSE?",
+        "options": [
+          "Appearance and Behavior",
+          "Speech and Language",
+          "Family and Social History",
+          "Thoughts and Perceptions"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingLevelOfConsciousnessBehavior",
+        "question": "Which question would be most appropriate when assessing a patient's level of consciousness as part of their behavior?",
+        "options": [
+          "Are you dressed appropriately for the weather?",
+          "How is your personal grooming today?",
+          "Are you seemingly falling asleep during the conversation?",
+          "Do you appear to be agitated?"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingAppearance",
+        "question": "When assessing a patient's appearance, which of the following observations is most relevant?",
+        "options": [
+          "Are they moving erratically?",
+          "Do they answer your questions?",
+          "Is there an odor?",
+          "Can you arouse them easily?"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingBehavior",
+        "question": "Which observation relates to the assessment of a patient's behavior?",
+        "options": [
+          "Are they clean?",
+          "Is their speech fluent?",
+          "What are their body movements and facial expressions telling you?",
+          "Are they aware of their surroundings?"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "Drowsiness",
+        "question": "A patient is sleepy but fully responsive when you speak to them or touch them lightly. Which level of impaired consciousness does this describe?",
+        "options": [
+          "Lethargy",
+          "Obtundation",
+          "Stupor",
+          "Drowsiness"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "Lethargy",
+        "question": "A patient has decreased alertness and slowed mental processing. They are briefly responsive to your verbal questions but then drift back to sleep. This state is best described as:",
+        "options": [
+          "Lethargy",
+          "Coma",
+          "Drowsiness",
+          "Obtundation"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "Obtundation",
+        "question": "A patient has blunted consciousness and reduced interest in their surroundings, responding slowly and minimally only to loud verbal or gentle physical stimulation. This level of consciousness is called:",
+        "options": [
+          "Stupor",
+          "Lethargy",
+          "Obtundation",
+          "Coma"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "Stupor",
+        "question": "A patient is in a state of profound unresponsiveness, is arousable only briefly with vigorous, repeated painful stimulation, and provides minimal, often nonverbal responses. This describes:",
+        "options": [
+          "Coma",
+          "Stupor",
+          "Lethargy",
+          "Obtundation"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "Coma",
+        "question": "Which term describes a state of complete unresponsiveness to any external stimuli, with no verbal or motor output?",
+        "options": [
+          "Stupor",
+          "Obtundation",
+          "Lethargy",
+          "Coma"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ConfusionDefinition",
+        "question": "What is 'confusion' defined as?",
+        "options": [
+          "A state of profound unresponsiveness.",
+          "An acute onset of fluctuating disorientation.",
+          "Altered cognitive ability and a disturbance of thought processes.",
+          "A progressive loss of cognitive functioning over time."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "DeliriumDefinition",
+        "question": "Which of the following best describes delirium?",
+        "options": [
+          "A progressive loss of memory that interferes with daily life.",
+          "A state of confusion with an acute onset, fluctuating course, and often linked to underlying medical illness.",
+          "A general disturbance of thought processes without a specific cause.",
+          "A state of sleepiness with preserved awareness."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "DementiaDefinition",
+        "question": "What is the key feature of dementia?",
+        "options": [
+          "An acute state of confusion that is worse at night.",
+          "A fluctuating level of consciousness with lucid intervals.",
+          "A progressive loss of cognitive functioning severe enough to interfere with daily life.",
+          "A state of profound unresponsiveness to painful stimuli."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingSpeechQuantity",
+        "question": "When assessing the quantity of a patient's speech, what is a key consideration?",
+        "options": [
+          "Is the volume soft or loud?",
+          "Are the words spoken clearly?",
+          "Are there long pauses between words?",
+          "Does the patient initiate conversation or only answer direct questions?"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "AssessingSpeechRate",
+        "question": "The assessment of speech rate is concerned with which of the following?",
+        "options": [
+          "Whether the speech is talkative or quiet.",
+          "Whether the speech is slow or rapid.",
+          "Whether the speech volume is appropriate.",
+          "Whether the words are spoken clearly."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AssessingSpeechVolume",
+        "question": "Which aspect of speech is being assessed when considering if it is 'soft versus loud' and if the volume is 'appropriate'?",
+        "options": [
+          "Rate",
+          "Fluency",
+          "Articulation",
+          "Volume"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "AssessingSpeechArticulation",
+        "question": "When you are assessing if a patient's words are spoken clearly and trying to distinguish a speech impediment from slurring, you are evaluating their:",
+        "options": [
+          "Speech Quantity",
+          "Speech Fluency",
+          "Speech Articulation",
+          "Speech Rate"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingSpeechFluency",
+        "question": "A patient uses the phrase 'what you write with' instead of saying 'pen'. This is an example of a disturbance in which aspect of speech?",
+        "options": [
+          "Volume",
+          "Rate",
+          "Articulation",
+          "Fluency"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ApraxiaOfSpeechDefinition",
+        "question": "What is apraxia of speech?",
+        "options": [
+          "A language comprehension problem where a person cannot understand words.",
+          "Weakness or paralysis of the muscles involved with speech.",
+          "A neurologic disorder where the brain cannot properly sequence the required sounds for speech, affecting articulation.",
+          "An inability to process sensory information like touch or sound."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AphasiaDefinition",
+        "question": "Aphasia is primarily a problem with:",
+        "options": [
+          "Sequencing the motor commands for speech.",
+          "The physical articulation of words.",
+          "Language comprehension or expression.",
+          "Recognizing sensory input like sounds."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AgnosiaDefinition",
+        "question": "A patient can feel a paperclip in their hand with their eyes closed but cannot identify it. Sensation is intact. This is an example of:",
+        "options": [
+          "Aphasia",
+          "Apraxia",
+          "Agnosia",
+          "Amnesia"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingMood",
+        "question": "When assessing a patient's mood, which of the following is an appropriate direct question?",
+        "options": [
+          "Do you make eye contact when you speak?",
+          "How do you feel overall?",
+          "Does the tone of your voice change?",
+          "Are you dressed appropriately?"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AssessingAffect",
+        "question": "How is a patient's affect primarily assessed?",
+        "options": [
+          "By asking the patient directly how they feel.",
+          "By reviewing their medical history.",
+          "By observing their interactions, eye contact, and vocal tone during the interview.",
+          "By administering a written questionnaire."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingMoodSeverityAndAppropriateness",
+        "question": "A patient's affect that is observed as 'unchanging throughout' the interview would be described as:",
+        "options": [
+          "Excitable",
+          "Appropriate",
+          "Flat",
+          "Inappropriate"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MoodVsAffectAnalogy",
+        "question": "Based on the analogy 'Mood is to affect as climate is to weather,' which statement is true?",
+        "options": [
+          "Mood is the observable, episodic feeling, while affect is the more sustained emotion.",
+          "Mood is the more sustained emotion, while affect is the observable, episodic feeling.",
+          "Mood and affect are interchangeable terms for the same phenomenon.",
+          "Climate and weather are unrelated to mood and affect."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ThoughtProcessAssessment",
+        "question": "The assessment of a patient's thought process is primarily concerned with whether their thoughts are:",
+        "options": [
+          "Happy or sad.",
+          "Related to obsessions or phobias.",
+          "Logical, relevant, and organized.",
+          "Based in reality or delusional."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ThoughtContentAssessment",
+        "question": "Which of the following would be an assessment of thought content?",
+        "options": [
+          "Asking about the presence of compulsions, obsessions, or delusions.",
+          "Noting if the patient's speech is logical and organized.",
+          "Observing if the patient shifts topics frequently.",
+          "Checking if the patient invents new words."
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "CircumstantialityDefinition",
+        "question": "What is 'circumstantiality'?",
+        "options": [
+          "Shifting between unrelated topics.",
+          "Speech with unnecessary detail, indirection, and delay in reaching the point.",
+          "Inventing or distorting words.",
+          "An interruption of speech midsentence."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "CircumstantialityExample",
+        "question": "A patient, when asked about their trip to the store, describes the weather, a memory from 1997, and the position of their window blinds before finally answering. This is an example of:",
+        "options": [
+          "Derailment",
+          "Blocking",
+          "Circumstantiality",
+          "Neologism"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "DerailmentDefinition",
+        "question": "Which term describes the act of shifting between topics that are loosely connected or completely unrelated?",
+        "options": [
+          "Perseveration",
+          "Derailment",
+          "Confabulation",
+          "Clanging"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "DerailmentExample",
+        "question": "A patient says, 'My mom sent me a gift, and gifts are amazing-did you know dolphins can recognize themselves in mirrors?' This is a clinical example of:",
+        "options": [
+          "Flight of ideas",
+          "Derailment",
+          "Incoherence",
+          "Echolalia"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "FlightOfIdeasDefinition",
+        "question": "What defines 'flight of ideas'?",
+        "options": [
+          "Persistent repetition of the same word or idea.",
+          "Interruption of speech in the middle of a sentence.",
+          "Illogical and incomprehensible speech.",
+          "A continuous flow of speech with abrupt changes from one topic to the next."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "FlightOfIdeasExample",
+        "question": "A patient rapidly states, 'I need to go to the bank-banks are near water-I love fishing-my brother's car is blue like the ocean-blueberries are my favorite snack.' This speech pattern is known as:",
+        "options": [
+          "Flight of Ideas",
+          "Clanging",
+          "Blocking",
+          "Perseveration"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "NeologismsDefinition",
+        "question": "The creation of invented or distorted words is referred to as:",
+        "options": [
+          "Echolalia",
+          "Neologisms",
+          "Confabulation",
+          "Derailment"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "NeologismsExample",
+        "question": "If a patient says, 'He's always flinderating around when he should be working,' the word 'flinderating' is an example of a:",
+        "options": [
+          "Clang association",
+          "Perseveration",
+          "Neologism",
+          "Compulsion"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "IncoherenceDefinition",
+        "question": "Speech that is illogical and incomprehensible, with no meaningful connections between words or ideas, is best described as:",
+        "options": [
+          "Circumstantiality",
+          "Incoherence",
+          "Blocking",
+          "Flight of Ideas"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "IncoherenceExample",
+        "question": "A patient states, 'The colors jump softly when the moon sings above the concrete banana.' This is a classic example of:",
+        "options": [
+          "Neologism",
+          "Clanging",
+          "Incoherence",
+          "Derailment"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "BlockingDefinition",
+        "question": "What is 'blocking' in the context of thought processes?",
+        "options": [
+          "Persistent repetition of words or ideas.",
+          "Choosing words based on sound rather than meaning.",
+          "Interruption of speech midsentence, as if losing the thought.",
+          "Fabricating events to fill in memory gaps."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "BlockingExample",
+        "question": "A patient says, 'I was going to tell you about my appointment with the... uh... I forgot what I was saying.' This is an example of:",
+        "options": [
+          "Confabulation",
+          "Blocking",
+          "Circumstantiality",
+          "Perseveration"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ConfabulationDefinition",
+        "question": "Which term describes the fabrication of facts or events to fill in gaps from impaired memory?",
+        "options": [
+          "Confabulation",
+          "Delusion",
+          "Illusion",
+          "Neologism"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "ConfabulationExample",
+        "question": "A patient with memory impairment who insists they had breakfast with their deceased parent this morning is demonstrating:",
+        "options": [
+          "Echolalia",
+          "A delusion",
+          "Blocking",
+          "Confabulation"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "PerseverationDefinition",
+        "question": "'Perseveration' is defined as:",
+        "options": [
+          "The repetition of the words and phrases of others.",
+          "Choosing words based on rhyming rather than meaning.",
+          "The persistent repetition of words or ideas.",
+          "Inventing or distorting words."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "PerseverationExample",
+        "question": "A patient repeatedly says, 'I need to call my sister, call my sister, call my sister.' This is a clinical example of:",
+        "options": [
+          "Clanging",
+          "Echolalia",
+          "Perseveration",
+          "Blocking"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "EcholaliaDefinition",
+        "question": "What is echolalia?",
+        "options": [
+          "The invention of new words.",
+          "The repetition of the words and phrases of others.",
+          "The persistent repetition of one's own ideas.",
+          "The fabrication of events to fill memory gaps."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "EcholaliaExample",
+        "question": "When a clinician asks, 'Do you feel safe at home?' and the patient responds, 'Feel safe at home, feel safe at home,' the patient is exhibiting:",
+        "options": [
+          "Perseveration",
+          "Echolalia",
+          "Confabulation",
+          "Neologism"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ClangingDefinition",
+        "question": "Choosing words based on their rhyming quality rather than their meaning is known as:",
+        "options": [
+          "Clanging",
+          "Blocking",
+          "Neologism",
+          "Echolalia"
+        ],
+        "correctAnswer": 0
+      },
+      {
+        "topic": "ClangingExample",
+        "question": "A patient who says, 'The rain in Spain falls mainly on the brain... chain, train, pain, gain,' is demonstrating which type of thought process abnormality?",
+        "options": [
+          "Derailment",
+          "Perseveration",
+          "Clanging",
+          "Incoherence"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingPerceptions",
+        "question": "Which of the following questions is designed to assess for abnormalities of perception, such as hallucinations?",
+        "options": [
+          "What do you think is wrong?",
+          "What are your plans after discharge?",
+          "When you hear voices speaking to you, what do they say?",
+          "Are your thoughts logical and organized?"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingInsight",
+        "question": "Which question is most appropriate for assessing a patient's insight?",
+        "options": [
+          "What would you do if you saw smoke coming out of a building?",
+          "What do you think is wrong?",
+          "Are you hearing any voices?",
+          "Can you spell 'WORLD' backwards?"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AssessingJudgement",
+        "question": "To assess a patient's judgement, a clinician might ask:",
+        "options": [
+          "What brings you to the hospital?",
+          "What do you think is wrong with you?",
+          "Do you ever see things that aren't really there?",
+          "If you found a letter on the ground, what would you do with it?"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "CognitiveFunctionTestingIndications",
+        "question": "In which patient population should cognitive function testing be performed as part of an annual wellness exam?",
+        "options": [
+          "Adolescents",
+          "Athletes",
+          "Elderly",
+          "Pregnant women"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "CognitiveFunctionQuantification",
+        "question": "What is a primary benefit of using tools like the MMSE for cognitive function?",
+        "options": [
+          "They provide a subjective feeling about the patient's condition.",
+          "They are a quick way to diagnose all psychiatric illnesses.",
+          "They offer an excellent way to quantify cognitive function and objectively measure its progression.",
+          "They can replace the need for a full patient history."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingOrientation",
+        "question": "A patient who is correctly aware of their own identity, their current location, the current time, and the reason for their visit is described as:",
+        "options": [
+          "Oriented x 1",
+          "Oriented x 2",
+          "Oriented x 3",
+          "Oriented x 4"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "AssessingAttention",
+        "question": "Which of the following tasks is used to assess a patient's attention?",
+        "options": [
+          "Asking about historical events.",
+          "Giving the patient three words to remember.",
+          "Asking the patient to spell 'WORLD' backwards.",
+          "Asking the patient to identify a pen."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingRemoteMemory",
+        "question": "Which question would be most appropriate for assessing a patient's remote memory?",
+        "options": [
+          "What did you have for breakfast today?",
+          "What were the three words I asked you to remember?",
+          "What time was your appointment today?",
+          "Where have you lived in the past?"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "AssessingRecentMemory",
+        "question": "Why is asking a patient what they ate for breakfast an unreliable way to test recent memory without validation?",
+        "options": [
+          "Breakfast is not a significant enough event.",
+          "Patients will make up information if they can't remember.",
+          "It tests remote memory, not recent memory.",
+          "The patient may not have eaten breakfast."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AssessingNewLearningAbility",
+        "question": "What is the procedure for assessing a patient's new learning ability?",
+        "options": [
+          "Ask them to spell a word backwards.",
+          "Ask them about a major historical event.",
+          "Give them three words and ask for recall after about 5 minutes.",
+          "Ask them to perform a simple calculation."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingInformationAndVocabulary",
+        "question": "Assessing a patient's grasp of information, complexity of ideas, and vocabulary use provides a rough estimate of their:",
+        "options": [
+          "Mood",
+          "Affect",
+          "Intelligence",
+          "Judgement"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingCalculatingAbility",
+        "question": "Which of the following tasks is designed to assess a patient's calculating ability?",
+        "options": [
+          "Naming a pen.",
+          "Explaining a proverb.",
+          "Copying intersecting pentagons.",
+          "Determining the change from $1 for a $0.78 item."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "AssessingAbstractThinkingSimilarities",
+        "question": "When asked for the similarity between a cat and a mouse, a patient who responds 'they both have tails' is demonstrating what type of thinking?",
+        "options": [
+          "Abstract",
+          "Irrelevant",
+          "Concrete",
+          "Bizarre"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AssessingAbstractThinkingProverbs",
+        "question": "A patient is asked what 'People in glass houses should not throw stones' means. Which response demonstrates abstract thinking?",
+        "options": [
+          "The stone will break the glass.",
+          "Don't judge others.",
+          "The alligator will break in the house and eat the stone.",
+          "Glass is fragile."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AssessingConstructionalAbility",
+        "question": "Which of these tasks would be used to assess a patient's constructional ability?",
+        "options": [
+          "Asking them to repeat a phrase.",
+          "Asking them to name four recent presidents.",
+          "Asking them to draw a clock showing a specific time.",
+          "Asking them the meaning of a proverb."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MMSE_ScoreNormal",
+        "question": "What score range on the Mini-Mental State Examination (MMSE) is considered NORMAL?",
+        "options": [
+          "0-9",
+          "10-19",
+          "20-23",
+          "24-30"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "MMSE_ScoreMildImpairment",
+        "question": "A patient scores 21 on the MMSE. This score indicates what level of cognitive impairment?",
+        "options": [
+          "Normal",
+          "Mild",
+          "Moderate",
+          "Severe"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MMSE_ScoreModerateImpairment",
+        "question": "According to the MMSE scoring guidelines, a score of 15 would be classified as:",
+        "options": [
+          "Normal",
+          "Mild cognitive impairment",
+          "Moderate cognitive impairment",
+          "Severe cognitive impairment"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MMSE_ScoreSevereImpairment",
+        "question": "A patient with an MMSE score of 7 is considered to have what level of cognitive impairment, and what is the recommendation?",
+        "options": [
+          "Moderate; requires weekly check-ins.",
+          "Mild; can live independently.",
+          "Severe; should not be living alone.",
+          "Normal; no recommendations needed."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MnemonicGeneralAppearance",
+        "question": "In the GMSE MAT PC! mnemonic, what does 'G' stand for and involve?",
+        "options": [
+          "Gait; assessing how the patient walks.",
+          "General Appearance and Behavior; assessing dressing, hygiene, and posture.",
+          "Grooming; assessing only the patient's cleanliness.",
+          "Goals; asking the patient about their future plans."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MnemonicMotorActivity",
+        "question": "The 'M' for Motor Activity in the MSE mnemonic focuses on assessing:",
+        "options": [
+          "The patient's mood.",
+          "The patient's memory.",
+          "Psychomotor activity, such as slow, agitated, or repetitive movements.",
+          "The patient's ability to follow motor commands."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MnemonicSpeech",
+        "question": "According to the GMSE MAT PC! mnemonic, the 'S' for Speech involves assessing if the patient's speech is:",
+        "options": [
+          "Logical and coherent.",
+          "Truthful or delusional.",
+          "Appropriate for their education level.",
+          "Slow or rapid, monotonous or fluctuating, and clear or slurred."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "MnemonicEyeContact",
+        "question": "What does the 'E' in the GMSE MAT PC! mnemonic stand for?",
+        "options": [
+          "Emotion; assessing the patient's primary feeling.",
+          "Expression; observing facial expressions only.",
+          "Eye Contact; evaluating if the patient is looking at you, down, or around the room.",
+          "Energy; noting if the patient seems fatigued or energetic."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MnemonicMood",
+        "question": "In the MSE mnemonic, how is 'Mood' (the second 'M') typically assessed?",
+        "options": [
+          "By observing the patient's body language.",
+          "By asking the patient about their feelings and using their own words to describe it.",
+          "By measuring the patient's heart rate.",
+          "By interpreting the tone of their voice."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MnemonicAffect",
+        "question": "The 'A' for Affect in the mnemonic is described as the external expression of mood. How is it assessed?",
+        "options": [
+          "Only by asking 'How are you feeling?'.",
+          "By assessing memory and concentration.",
+          "Through the patient's facial expressions, tone of voice, and body language.",
+          "By documenting the patient's self-reported feelings."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MnemonicThoughtContent",
+        "question": "What does the 'T' for Thought Content in the MSE mnemonic instruct the clinician to document?",
+        "options": [
+          "How the patient's thoughts are organized.",
+          "The speed and flow of the patient's speech.",
+          "WHAT the patient is thinking about, including delusions or suicidal ideation.",
+          "The patient's ability to think abstractly."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MnemonicThoughtProcess",
+        "question": "The 'P' for Thought Process in the mnemonic assesses:",
+        "options": [
+          "WHAT the patient is thinking about.",
+          "HOW a patient's thoughts are organized and linked together.",
+          "The patient's perceptions, such as hallucinations.",
+          "The patient's posture and movements."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "MnemonicCognition",
+        "question": "In the GMSE MAT PC! mnemonic, 'C' stands for Cognition. What does this component assess?",
+        "options": [
+          "The patient's clothing and hygiene.",
+          "Any complaints the patient has.",
+          "The patient's eye contact.",
+          "Abilities such as orientation, memory, and concentration."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "MnemonicInsightAndJudgement",
+        "question": "The '!' in the mnemonic stands for Insight & Judgment. What does insight refer to in this context?",
+        "options": [
+          "The ability to make decisions leading to appropriate outcomes.",
+          "The patient's understanding of their own mental state and its consequences.",
+          "The presence of high levels of impulsivity.",
+          "The patient's cognitive abilities like memory."
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AbbreviatedMentalStatusIndications",
+        "question": "On which patients should an Abbreviated Mental Status exam (not the MMSE) be performed?",
+        "options": [
+          "Only on elderly patients.",
+          "Only on patients with a known psychiatric history.",
+          "On EVERY patient.",
+          "Only on patients with altered mental status."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "MiniMentalStateIndications",
+        "question": "The Mini-Mental State exam is specifically indicated for which group of patients?",
+        "options": [
+          "All pediatric patients.",
+          "Patients presenting with orthopedic injuries.",
+          "Patients with altered mental status, psychiatric, neurologic, or elderly patients.",
+          "Every patient at every visit, without exception."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ExamStep1_LevelOfConsciousness",
+        "question": "What is the first step in the outlined Mental Status Exam sequence?",
+        "options": [
+          "Assess appearance",
+          "Assess level of consciousness",
+          "Assess posture and motor behavior",
+          "Assess speech characteristics"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ExamStep2_Appearance",
+        "question": "Step 2 of the Mental Status Exam involves assessing:",
+        "options": [
+          "Level of consciousness.",
+          "Quantity and rate of speech.",
+          "Dress, grooming, and personal hygiene.",
+          "Memory and orientation."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ExamStep3_PostureAndMotor",
+        "question": "Which of the following is assessed in the third step of the Mental Status Exam?",
+        "options": [
+          "Thought content and process.",
+          "Memory and orientation.",
+          "Language and comprehension.",
+          "Posture and motor behavior, facial expression, and affect."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ExamStep4_SpeechCharacteristics",
+        "question": "Step 4 of the Mental Status Exam focuses on assessing which of the following?",
+        "options": [
+          "The patient's mood and insight.",
+          "The patient's appearance and grooming.",
+          "The quantity, rate, loudness, fluency, and articulation of speech.",
+          "The patient's memory and attention."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ExamStep5_ThoughtAndPerception",
+        "question": "According to the exam sequence, when should thought content, thought process, perception, and insight be assessed?",
+        "options": [
+          "Only at the very beginning of the exam.",
+          "Only at the very end of the exam.",
+          "Throughout the entire exam.",
+          "Only if the patient has a psychiatric history."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ExamStep6_Memory",
+        "question": "When assessing memory as part of the MSE, which task is used to check a patient's new learning ability?",
+        "options": [
+          "Asking for their person, place, and time.",
+          "Asking them to name 4 recent presidents.",
+          "Asking them to recall 3 objects after a delay.",
+          "Asking about a recent event in the news."
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ExamStep7_Attention",
+        "question": "Which of the following tasks is listed as a method for assessing attention in Step 7 of the MSE?",
+        "options": [
+          "Recalling three objects.",
+          "Drawing a clock.",
+          "Naming four recent presidents.",
+          "Performing serial 7s."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ExamStep8_Language",
+        "question": "In the language assessment (Step 8), what task is used to check for constructional ability?",
+        "options": [
+          "Repeating a phrase of one-syllable words.",
+          "Following a one-stage command.",
+          "Identifying an object like a pen.",
+          "Drawing a clock with numbers and hands showing 3:00."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "ExamStep9_HigherCognitiveFunctions",
+        "question": "In Step 9, which question is used to assess a patient's insight?",
+        "options": [
+          "\"What would you do if you saw a house on fire?\"",
+          "\"Can you explain the meaning of 'Don't cry over spilt milk?'\"",
+          "\"Can you tell me why you are here today?\"",
+          "\"What's 4 + 7?\""
+        ],
+        "correctAnswer": 2
+      }
+    ],
+    "topicTextMap": {
+      "MentalStatusExamDefinition": "Structured way of observing and describing psychological functioning at a given point in time.",
+      "MentalStatusExamInformationGathering": "Most of this information is gathered at every single visit and assessed throughout your patient encounter. Observations by direct and indirect means.",
+      "MentalStatusExamUsefulness": "Useful for patients with forgetfulness, dementia, depression, and psych symptoms. Also useful for monitoring progression of symptoms and with any course of treatment.",
+      "MiniMentalStateExaminationDefinition": "Mini-Mental State Examination. A 30-point questionnaire used to measure cognitive impairment.",
+      "MiniMentalStateExaminationPurpose": "Used frequently for screening for dementia and progression of impairment.",
+      "LevelOfCounsciousnessDefinition": "Level of consciousness - awareness of your surroundings.",
+      "MemoryDefinition": "Memory - registering and recording information.",
+      "RecentMemoryDefinition": "Recent (short term).",
+      "RemoteMemoryDefinition": "Remote (long term).",
+      "AttentionDefinition": "Attention - focus or concentration on a task or activity.",
+      "OrientationDefinition": "Orientation - awareness of personal identity, place and time.",
+      "PerceptionDefinition": "Perception - sensory awareness of objects and their interrelationships (external stimuli); also refers to internal stimuli like dreams/hallucinations.",
+      "ThoughtProcessesDefinition": "Thought Processes - logic, coherence, relevance of thoughts. HOW people think.",
+      "ThoughtContentDefinition": "Thought Content - includes insight and judgement. WHAT the patient thinks about.",
+      "InsightDefinition": "Insight - awareness of symptoms or behaviors as normal or abnormal.",
+      "JudgementDefinition": "Judgement - process of evaluating and comparing options when deciding on a course of action.",
+      "AffectDefinition": "Affect - observable feeling or tone expressed through voice, facial expression, and demeanor.",
+      "MoodDefinition": "Mood - emotion that impacts a person's view.",
+      "LanguageDefinition": "Language - reception, expression, and comprehension of words.",
+      "HigherCognitiveFunctionsDefinition": "Higher Cognitive Functions - vocabulary, fund of knowledge, abstract thinking, calculations, etc.",
+      "MSEComponents": "The components of the MSE are: Appearance and Behavior, Speech and Language, Mood and Affect, Thoughts and Perceptions, and Cognitive Function/MMSE.",
+      "AssessingLevelOfConsciousnessBehavior": "When assessing behavior, ask: Awake? Alert? Do they answer your questions? Are they seemingly falling asleep during the conversation? Can you arouse them?",
+      "AssessingAppearance": "When assessing appearance, ask: Are they clean? Are they dressed appropriately? How is their grooming? Is there an odor?",
+      "AssessingBehavior": "When assessing behavior, ask: How is their posture? Do they appear to be unable to move? Are they moving erratically? Are they moving very slowly? What are their body movements, facial expressions and voice telling you? Pleasant? Cooperative? Agitated?",
+      "Drowsiness": "Definition: Sleepiness with preserved awareness. Stimulus needed: Verbal or light touch. Responsiveness: Fully responsive when awake.",
+      "Lethargy": "Definition: Decreased alertness and slowed mental processing. Stimulus needed: Moderate stimulation (verbal or tactile). Responsiveness: Briefly responsive; may drift back to sleep.",
+      "Obtundation": "Definition: Blunted consciousness and reduced interest in surroundings. Stimulus needed: Loud verbal or gentle physical stimulation. Responsiveness: Slow, minimal responses. Clinical note: More severe than lethargy.",
+      "Stupor": "Definition: Profound unresponsiveness; arousable only briefly. Stimulus needed: Vigorous, repeated stimulation (e.g., pain). Responsiveness: Minimal, often nonverbal or groaning.",
+      "Coma": "Definition: Complete unresponsiveness to external stimuli. Stimulus needed: No response to any stimulus. Responsiveness: None - no verbal or motor output. Clinical note: Life-threatening; requires immediate intervention and monitoring.",
+      "ConfusionDefinition": "Confusion is an altered cognitive ability (thinking, learning, understanding), and a disturbance of thought processes.",
+      "DeliriumDefinition": "Delirium is a state of confusion with an acute onset. It is fluctuating with lucid intervals, worse at night, and can last hours to weeks. It is associated with underlying medical illness or drug toxicity.",
+      "DementiaDefinition": "Dementia is a progressive loss of cognitive functioning that is severe enough to interfere with a person's daily life, involving memory, thinking/thought processes, and social abilities.",
+      "AssessingSpeechQuantity": "To assess speech quantity, ask: Are they talkative or mostly quiet? Do they initiate conversation or only answer direct questions? Is the conversation easy or like 'pulling teeth'?",
+      "AssessingSpeechRate": "To assess speech rate, note: Is it slow speech vs rapid speech? Are there long pauses in between or no pauses in between?",
+      "AssessingSpeechVolume": "To assess speech volume, note: Is it soft versus loud? Is the volume appropriate?",
+      "AssessingSpeechArticulation": "To assess speech articulation, ask: Are the words spoken clearly? Is there a speech impediment vs slurring from intoxication or a stroke?",
+      "AssessingSpeechFluency": "To assess speech fluency, ask: What is the fluency? Are they monotone? Are there appropriate inflections in the voice? Is there a disturbance in the flow of words? Are the words used correctly? Are there circumlocutions or substitutions for words ('what you write with' instead of 'pen')? Are they inventing words? Are they repeating words or phrases? Are they only making sounds?",
+      "ApraxiaOfSpeechDefinition": "Apraxia (of speech) is a neurologic speech coordination disorder that causes issues with articulation and pronunciation. The brain knows what it wants to say but cannot properly sequence the required sounds. This is not an issue of weakness or paralysis of the muscles involved with speech - it is a brain pathway disorder.",
+      "AphasiaDefinition": "Aphasia is a neurologic disorder that causes someone to lose the ability to understand or express speech. This is a language comprehension problem. There are different types (expressive, receptive, etc).",
+      "AgnosiaDefinition": "Agnosia is the inability to process sensory information. The brain keeps you from recognizing input from one of your senses (vision, hearing, touch etc). For example, a patient can hear fine but they cannot identify what the sound is (can't identify a telephone ringing) or a patient can feel and sensation is intact but if they close their eyes and a paperclip is placed in their hand, they cannot identify it.",
+      "AssessingMood": "Examples of mood are: Sad, Melancholy, Content, Joy, Anger, Rage, Euphoria, Detachment, Indifference. This can be asked directly if unclear by asking: How do you feel overall? How do you feel about that?",
+      "AssessingAffect": "To assess affect, ask yourself: How does the patient appear to you? This interpretation is based on your observation of their interactions during the interview. Do they make eye contact? Are they excitable? Does the tone of their voice change?",
+      "AssessingMoodSeverityAndAppropriateness": "To assess mood, determine its severity ('how angry do you get? how sad do you get?') and if it is appropriate for the situation. Common assessments of affect include: flat (unchanging throughout), excitable, and appropriate.",
+      "MoodVsAffectAnalogy": "The analogy is: 'Mood is to affect as climate is to weather'. Mood is a more sustained emotion that may color a person's view of the world. Affect is an observable, usually episodic feeling or tone.",
+      "ThoughtProcessAssessment": "To assess thought process, ask: Are the thought processes logical, relevant, organized?",
+      "ThoughtContentAssessment": "To assess thought content, ask: Are there any abnormalities of thought content (compulsions, obsessions, phobias, anxieties, delusions, depersonalization)? Do you now or have you ever wanted to hurt yourself or someone else?",
+      "CircumstantialityDefinition": "Circumstantiality is speech with unnecessary detail, indirection, and delay in reaching the point.",
+      "CircumstantialityExample": "An example of circumstantiality: 'When I woke up, the sun was shining through the window-I remember I forgot to close the blinds. It was a sunny morning, like the one in 1997. Anyway, I eventually went to the store.'",
+      "DerailmentDefinition": "Derailment is shifting topics that are loosely connected or unrelated.",
+      "DerailmentExample": "An example of derailment: 'My mom sent me a gift, and gifts are amazing-did you know dolphins can recognize themselves in mirrors?'",
+      "FlightOfIdeasDefinition": "Flight of ideas is a continuous flow of speech with abrupt changes from one topic to the next.",
+      "FlightOfIdeasExample": "An example of flight of ideas: 'I need to go to the bank-banks are near water-I love fishing-my brother's car is blue like the ocean-blueberries are my favorite snack.'",
+      "NeologismsDefinition": "Neologisms are invented or distorted words.",
+      "NeologismsExample": "An example of a neologism: 'He's always flinderating around when he should be working.'",
+      "IncoherenceDefinition": "Incoherence is illogical, incomprehensible speech without meaningful connections.",
+      "IncoherenceExample": "An example of incoherence: 'The colors jump softly when the moon sings above the concrete banana.'",
+      "BlockingDefinition": "Blocking is the interruption of speech midsentence (i.e., losing the thought).",
+      "BlockingExample": "An example of blocking: 'I was going to tell you about my appointment with the... uh... I forgot what I was saying.'",
+      "ConfabulationDefinition": "Confabulation is the fabrication of facts or events in response to questions, to fill in gaps from impaired memory.",
+      "ConfabulationExample": "An example of confabulation is a patient who insists they had breakfast with their deceased parent that morning.",
+      "PerseverationDefinition": "Perseveration is the persistent repetition of words or ideas.",
+      "PerseverationExample": "An example of perseveration: 'I need to call my sister, call my sister, call my sister, call my sister.'",
+      "EcholaliaDefinition": "Echolalia is the repetition of the words and phrases of others.",
+      "EcholaliaExample": "An example of echolalia is when a clinician asks, 'Do you feel safe at home?' and the patient responds, 'Feel safe at home, feel safe at home.'",
+      "ClangingDefinition": "Clanging is choosing words based on rhyming rather than meaning.",
+      "ClangingExample": "An example of clanging: 'The rain in Spain falls mainly on the brain... chain, train, pain, gain.'",
+      "AssessingPerceptions": "To assess for abnormalities of perception (illusions, hallucinations), ask questions like: 'When you hear voices speaking to you, what do they say?' or 'After you have been drinking a lot, do you ever see or hear things that you know aren't really there?'",
+      "AssessingInsight": "To assess insight, ask questions like: 'What brings you to the hospital?' or 'What do you think is wrong?'",
+      "AssessingJudgement": "To assess judgement, ask questions like: 'What are your plans after you are discharged from the hospital?', 'How will you navigate your home after surgery?', 'If you found a letter on the ground, what would you do with it?', or 'What would you do if you saw smoke coming out of a building?'",
+      "CognitiveFunctionTestingIndications": "Cognitive function testing should be performed on patients with altered mental status, psychiatric presentation, neurologic concerns, and on the elderly as part of the annual wellness exam.",
+      "CognitiveFunctionQuantification": "Cognitive function testing is an excellent way to quantify cognitive function and a good way to objectively measure progression of cognitive decline.",
+      "AssessingOrientation": "To assess orientation, check for person, place, time, and event (oriented x 4). This can be asked directly if needed.",
+      "AssessingAttention": "To assess attention, use serial 7s (or 3s if necessary) or ask the patient to spell 'WORLD' backwards.",
+      "AssessingRemoteMemory": "To assess remote memory, ask about historical events, previous jobs, where they have lived in the past, or anniversaries.",
+      "AssessingRecentMemory": "Recent memory must be fact-checked, as patients may make up information if they can't remember. Asking what they ate for breakfast does not count unless a spouse/caregiver can validate it. Ask questions like: 'What time was your appointment today?' or 'What medications did you take so far today?'",
+      "AssessingNewLearningAbility": "To assess new learning ability, give the patient 3 words to repeat back to you and remember. Ask them what the 3 words were in about 5 minutes.",
+      "AssessingInformationAndVocabulary": "Assessing information and vocabulary provides a rough estimate of the patient's intelligence. Note the grasp of information, complexity of ideas expressed, and vocabulary used. You can ask them to name an object, test word/reading comprehension, and writing. For example, have the patient identify a pen or pencil and have them read a card and follow directions.",
+      "AssessingCalculatingAbility": "To assess calculating ability, ask simple math problems like 'What is 4+3?' or '5x7?'. A practical question could be: 'If you bought something for $0.78 and you gave the cashier $1, how much would you get back?'",
+      "AssessingAbstractThinkingSimilarities": "To assess abstract thinking with similarities (e.g., cat and mouse), a concrete answer is 'they both have tails,' while an abstract answer is 'they're both animals.' An irrelevant answer would be 'the cat turned into a mouse.'",
+      "AssessingAbstractThinkingProverbs": "To assess abstract thinking with proverbs (e.g., 'People in glass houses should not throw stones'), a concrete answer is 'the stone will break the glass,' while an abstract answer is 'don't judge others.' A bizarre answer would be 'The alligator will break in the house and eat the stone you threw.'",
+      "AssessingConstructionalAbility": "To assess constructional ability, have a patient copy simple shapes (circle, diamond), draw a clock with the numbers and a specific time, or draw intersecting pentagons.",
+      "MMSE_ScoreNormal": "A score of 24-30 on the MMSE is considered NORMAL.",
+      "MMSE_ScoreMildImpairment": "A score of 20-23 on the MMSE indicates MILD cognitive impairment.",
+      "MMSE_ScoreModerateImpairment": "A score of 10-19 on the MMSE indicates MODERATE cognitive impairment.",
+      "MMSE_ScoreSevereImpairment": "A score of 0-9 on the MMSE indicates SEVERE cognitive impairment. Patients with this score should not be living alone.",
+      "MnemonicGeneralAppearance": "G = General Appearance and Behavior. Start by observing the patient's overall demeanor. Assess aspects like their dressing, hygiene, posture, and any notable behaviors.",
+      "MnemonicMotorActivity": "M = Motor Activity. Focus on the patient's psychomotor activity. Are their movements slow, agitated, or restless? Are there any repetitive, purposeless movements or signs of akathisia?",
+      "MnemonicSpeech": "S = Speech. Is the patient speaking slow or rapid, monotonous or fluctuating? Is their speech clear, or do they exhibit any slurring, stammering, or other speech disorders?",
+      "MnemonicEyeContact": "E = Eye Contact. Evaluate the patient's eye contact. Are they looking at you, looking down, not making any eye contact, or are their eyes darting around the room?",
+      "MnemonicMood": "M = Mood. Ask the patient about their feelings. Moods can fluctuate, and this provides a snapshot of their emotional state at the time of the visit. Describe the mood using the patient's own words.",
+      "MnemonicAffect": "A = Affect. While mood is a subjective experience, affect is its external expression. Assess it through the patient's facial expressions, tone of voice, and body language. Affect is described in terms of range (restricted, broad), intensity (blunted, intense), and appropriateness to the situation.",
+      "MnemonicThoughtContent": "T = Thought Content. Document WHAT the patient is thinking about. Ask about any delusions, hallucinations, phobias, obsessions, and suicidal and homicidal or violent ideation.",
+      "MnemonicThoughtProcess": "P = Thought Process. Assess how a patient's thoughts are organized and linked together. Are their thoughts logical, coherent, and goal-directed? Or do they display derailment, tangentiality, or circumstantiality?",
+      "MnemonicCognition": "C = Cognition. Assess cognitive abilities such as orientation, memory, concentration, and information processing.",
+      "MnemonicInsightAndJudgement": "! = Insight & Judgment. Assess the patient's insight (their understanding of their own mental state and its consequences) and judgment (their ability to make decisions leading to appropriate outcomes). Document if there are high levels of impulsivity. Document if their insight and judgment is stable, improving or worsening.",
+      "AbbreviatedMentalStatusIndications": "An Abbreviated Mental Status exam (not MMSE) should be performed on EVERY patient.",
+      "MiniMentalStateIndications": "The Mini-Mental State exam is performed on altered mental status, psychiatric, neurologic, and elderly patients.",
+      "ExamStep1_LevelOfConsciousness": "Step 1 of the MSE is to assess Level of consciousness.",
+      "ExamStep2_Appearance": "Step 2 of the MSE is to assess Appearance: dress, groom, personal hygiene.",
+      "ExamStep3_PostureAndMotor": "Step 3 of the MSE is to assess Posture and motor behavior, facial expression, and affect.",
+      "ExamStep4_SpeechCharacteristics": "Step 4 of the MSE is to assess Quantity, rate, loudness, fluency, and articulation of speech.",
+      "ExamStep5_ThoughtAndPerception": "Step 5 of the MSE is to assess thought content, thought process, perception, and insight throughout the exam.",
+      "ExamStep6_Memory": "Step 6 of the MSE is Memory. 1. Orientation: ask person, place, and time. 2. Remote Memory: Name 4 recent presidents. 3. Recent Memory: ask about a recent event in the news. 4. New learning ability: list 3 objects, have the patient say them back, and ask them to recall the 3 objects at the end of the exam.",
+      "ExamStep7_Attention": "Step 7 of the MSE is Attention: ask the patient to spell WORLD backwards or ask to perform serial 7s.",
+      "ExamStep8_Language": "Step 8 of the MSE is Language. Use a note card and pen to: 1. Name/identify an object. 2. Test word comprehension with a command. 3. Test reading comprehension. 4. Test Constructional Ability by drawing a clock. 5. Test repetition by having the patient repeat a phrase.",
+      "ExamStep9_HigherCognitiveFunctions": "Step 9 of the MSE is Higher cognitive functions. 1. Judgement: 'What would you do if you found an addressed envelope with a stamp on it?' 2. Insight: 'Can you tell me why you are here today?' 3. Abstract thinking: 'Can you explain the meaning of...' 4. Calculating ability: 'What's 4 + 7?'"
+    }
+  },
+  "Quiz_Module_4": {
+   "moduleName": "Male Genitourinary",
+    "questionBank": [
+      {
+        "topic": "PurposeOfExam",
+        "question": "Which of the following is listed as a reason to perform a male genitourinary exam for the evaluation of a problem?",
+        "options": [
+          "Routine physical fitness test",
+          "Erectile dysfunction",
+          "Allergic rhinitis",
+          "Headache evaluation"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "ExamPositioning",
+        "question": "What is one of the recommended patient positions for a male genitourinary exam?",
+        "options": [
+          "Supine",
+          "Prone",
+          "Standing/Left Lateral Decubitus",
+          "Seated upright"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "PerinealSkinInspection",
+        "question": "During the inspection of the perineal skin, which of the following is a key finding to look for?",
+        "options": [
+          "Normal skin turgor",
+          "Absence of hair",
+          "Erythema",
+          "Symmetrical body fat distribution"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "PenisAndScrotumInspection",
+        "question": "When inspecting the glans of the penis, which action is recommended to check for discharge?",
+        "options": [
+          "Palpate the base of the penis",
+          "Ask the patient to cough",
+          "Retract and replace the prepuce",
+          "Compress the glans"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "PalpationTechnique",
+        "question": "How should an examiner evaluate for a hernia during the palpation part of the exam?",
+        "options": [
+          "With the patient in a seated position",
+          "By applying light pressure to the bladder",
+          "With the patient bearing down",
+          "By checking for peripheral pulses"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "HerniaEvaluationTechnique",
+        "question": "What specific patient action is used during palpation to help identify a hernia?",
+        "options": [
+          "Deep breathing",
+          "A Valsalva maneuver",
+          "Bending at the waist",
+          "Rotating the hips"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "IndirectHernia",
+        "question": "What is the point of origin for an indirect hernia?",
+        "options": [
+          "Below the inguinal ligament, near the femoral canal",
+          "Above the inguinal ligament, close to the pubic tubercle",
+          "Above the inguinal ligament, near its midpoint (the internal inguinal ring)",
+          "Directly through the anterior abdominal wall"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "DirectHernia",
+        "question": "Which statement accurately describes the typical course of a direct hernia?",
+        "options": [
+          "It often descends into the scrotum",
+          "It never enters the scrotum",
+          "It bulges anteriorly and pushes the side of the finger",
+          "It touches the tip of the examining finger"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "FemoralHernia",
+        "question": "Which characteristic is true for a femoral hernia?",
+        "options": [
+          "It is the most common type of hernia in men over 40.",
+          "Its point of origin is above the inguinal ligament.",
+          "It often descends into the scrotum.",
+          "It is more common in women than men and its course never goes into the scrotum."
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "CondylomaAccuminata",
+        "question": "What is the specific name given for the condition visually represented as genital warts?",
+        "options": [
+          "Genital Herpes Simplex",
+          "Condyloma Accuminata",
+          "Peyronie's Disease",
+          "Chancre"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "GenitalHerpesSimplex",
+        "question": "The image provided labeled 'Genital Herpes Simplex' represents which type of condition?",
+        "options": [
+          "A bacterial infection",
+          "A viral infection",
+          "A congenital abnormality",
+          "A cancerous lesion"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "Chancre",
+        "question": "The term 'Chancre' typically refers to a lesion associated with which condition?",
+        "options": [
+          "Genital Warts (HPV)",
+          "Herpes Simplex Virus",
+          "Syphilis",
+          "Peyronie's Disease"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "Hypospadias",
+        "question": "The term 'Hypospadias' refers to a condition involving what aspect of the penis?",
+        "options": [
+          "Curvature of the shaft",
+          "The position of the urethral opening",
+          "The presence of painless swelling",
+          "The development of fibrous plaque"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "PeyroniesDisease",
+        "question": "Peyronie's Disease is a condition characterized by:",
+        "options": [
+          "A painless ulceration on the glans",
+          "A viral lesion cluster",
+          "The development of fibrous scar tissue inside the penis that causes curved, painful erections",
+          "The misplacement of the urethral meatus"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "CarcinomaOfPenis",
+        "question": "The term 'Carcinoma of the penis' indicates what type of pathological process?",
+        "options": [
+          "A benign cyst",
+          "An inflammatory condition",
+          "A malignant growth",
+          "A congenital malformation"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "DDxTesticularTumor",
+        "question": "In the differential diagnosis of a testicular mass, what are the typical ultrasound findings and age range for a tumor?",
+        "options": [
+          "Cystic, any age",
+          "Solid, age 20-45",
+          "Cystic, middle age",
+          "Solid, young age"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "DDxEpididymitis",
+        "question": "A patient of any age presenting with acute, painful testicular swelling, with or without fever, is likely to have which condition?",
+        "options": [
+          "Testicular Tumor",
+          "Hydrocele",
+          "Epididymitis",
+          "Spermatocele"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "DDxHydrocele",
+        "question": "According to the differential diagnosis table, what are the characteristic symptoms and location of a hydrocele?",
+        "options": [
+          "Painless swelling, on top of the testis",
+          "None, in the vaginal sac around the testis",
+          "Acute painful swelling, around the testis",
+          "Painless swelling, attached to the testis"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "DDxSpermatocele",
+        "question": "A middle-aged patient with a painless swelling located on the top of the testis most likely has a:",
+        "options": [
+          "Hydrocele",
+          "Varicocele",
+          "Testicular Tumor",
+          "Spermatocele"
+        ],
+        "correctAnswer": 3
+      },
+      {
+        "topic": "DDxVaricocele",
+        "question": "What is the classic description of the symptoms for a varicocele?",
+        "options": [
+          "Acute, painful swelling",
+          "Painless, attached to testis",
+          "None; bag of worms",
+          "None, cystic feeling in vaginal sac"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AtrophicTestis",
+        "question": "The term 'Atrophic' when used to describe a testis implies that it is:",
+        "options": [
+          "Enlarged and swollen",
+          "Normal in size and consistency",
+          "Shrunken or wasted away",
+          "Undescended"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "EpidermoidCysts",
+        "question": "The term 'Epidermoid Cysts' refers to what type of structure?",
+        "options": [
+          "A collection of fluid in the scrotum",
+          "A cancerous tumor",
+          "Benign bumps that develop on the skin",
+          "A varicose vein in the spermatic cord"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ScrotalEdema",
+        "question": "The term 'Scrotal Edema' refers to:",
+        "options": [
+          "An undescended testicle",
+          "Swelling of the scrotum due to fluid accumulation",
+          "A varicose vein in the scrotum",
+          "A cancerous mass in the scrotum"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "Hydrocele",
+        "question": "A 'Hydrocele' is a collection of fluid in what location?",
+        "options": [
+          "Within the epididymis",
+          "Within the testicle itself",
+          "In the sac surrounding the testicle",
+          "In the spermatic cord"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "Cryptorchidism",
+        "question": "The condition known as 'Cryptorchidism' refers to:",
+        "options": [
+          "Inflammation of the epididymis",
+          "Twisting of the spermatic cord",
+          "An undescended testicle",
+          "A fluid-filled sac around the testicle"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "TesticularTumor",
+        "question": "A 'Testicular Tumor' is best described as:",
+        "options": [
+          "A benign fluid collection",
+          "An infection of the testis",
+          "A malignant growth originating from the testicle",
+          "A varicose vein of the scrotum"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "AcuteEpididymitis",
+        "question": "'Acute Epididymitis' refers to a sudden onset of:",
+        "options": [
+          "Painless swelling",
+          "Inflammation of the epididymis",
+          "Twisting of the testicle",
+          "Fluid accumulation in the scrotum"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "Spermatocele",
+        "question": "A 'Spermatocele' is a type of cyst that forms where?",
+        "options": [
+          "On the glans penis",
+          "In the prostate gland",
+          "In the epididymis",
+          "Within the rectal vault"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "TuberculousEpididymitis",
+        "question": "'Tuberculous Epididymitis' is an inflammation of the epididymis caused by:",
+        "options": [
+          "A viral infection",
+          "Trauma",
+          "A bacterial infection (Mycobacterium tuberculosis)",
+          "A congenital defect"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "Varicocele",
+        "question": "A 'Varicocele' is the term for:",
+        "options": [
+          "A fluid-filled sac around the testis",
+          "An undescended testis",
+          "An enlargement of the veins within the scrotum",
+          "Inflammation of the testis"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "TesticularTorsion",
+        "question": "'Testicular Torsion' is a medical emergency involving:",
+        "options": [
+          "An infection of the epididymis",
+          "A cancerous mass",
+          "Twisting of the spermatic cord, cutting off blood supply",
+          "Fluid accumulation in the scrotum"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "RectalExamComponents",
+        "question": "Which of the following is assessed during the digital exam portion of a rectal exam?",
+        "options": [
+          "Perianal skin lesions only",
+          "Anal sphincter tone and the prostate",
+          "Only the presence of external hemorrhoids",
+          "The patient's ability to stand"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "AnalFissure",
+        "question": "The term 'Anal Fissure' describes what kind of finding?",
+        "options": [
+          "A swollen vein",
+          "A benign skin wart",
+          "A small tear or cut in the lining of the anus",
+          "A cancerous growth"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "ProstateExam",
+        "question": "A prostate exam is a component of which larger examination described in the text?",
+        "options": [
+          "Abdominal palpation",
+          "Hernia evaluation",
+          "Rectal examination",
+          "Perineal skin inspection"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "OccultBloodTesting",
+        "question": "The term 'Occult Blood Testing' refers to a test for:",
+        "options": [
+          "Visible, active bleeding",
+          "Blood that is not visibly apparent",
+          "Blood pressure",
+          "Blood glucose"
+        ],
+        "correctAnswer": 1
+      },
+      {
+        "topic": "Hemorrhoids",
+        "question": "The term 'Hemorrhoids' refers to:",
+        "options": [
+          "Tears in the anal canal",
+          "Malignant rectal tumors",
+          "Swollen and inflamed veins in the rectum and anus",
+          "A collection of pus near the anus"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "PerirectalAbscess",
+        "question": "A 'Perirectal Abscess' is best described as:",
+        "options": [
+          "A swollen vein",
+          "A cancerous tumor",
+          "A collection of pus in the tissue around the rectum and anus",
+          "An external skin wart"
+        ],
+        "correctAnswer": 2
+      },
+      {
+        "topic": "RectalCancer",
+        "question": "The term 'Rectal Cancer' signifies what type of finding?",
+        "options": [
+          "A benign polyp",
+          "An external hemorrhoid",
+          "A malignant growth in the rectum",
+          "An anal fissure"
+        ],
+        "correctAnswer": 2
+      }
+    ],
+    "topicTextMap": {
+      "PurposeOfExam": "The purpose of the exam is for screening or for the evaluation of a problem, such as a lesion, dysuria, erectile dysfunction, pain, or priapism.",
+      "ExamPositioning": "The recommended patient position is standing or left lateral decubitus in a gowned, private, and quiet environment.",
+      "PerinealSkinInspection": "Inspection of the perineal skin includes checking for erythema, edema, exanthem, lesions, assessing pubic hair, and performing Tanner staging.",
+      "PenisAndScrotumInspection": "Inspection includes the penis shaft, prepuce (which should be retracted and replaced), and under the scrotum. The glans is checked for ulcerations, condyloma, scars, nodules, erythema, and balanitis. The position of the urethral meatus is noted, and the glans is compressed to check for discharge. The base of the penis and inguinal hair are also inspected.",
+      "PalpationTechnique": "Palpation includes the penis shaft for tenderness, induration, or masses, and the scrotal contents (testes, epididymis, spermatic cord) for lesions. The inguinal canal is also palpated to evaluate for a hernia while the patient is bearing down.",
+      "HerniaEvaluationTechnique": "Hernia evaluation involves observation and palpation of the inguinal rings and femoral canal region while the patient is standing and performing a Valsalva maneuver.",
+      "IndirectHernia": "An indirect hernia is the most common type, occurring at all ages and in both sexes. It originates above the inguinal ligament near the internal inguinal ring and often courses into the scrotum, touching the fingertip on exam.",
+      "DirectHernia": "A direct hernia is less common, usually seen in men older than 40. It originates above the inguinal ligament near the external inguinal ring and rarely enters the scrotum, instead bulging anteriorly to push the side of the finger.",
+      "FemoralHernia": "A femoral hernia is the least common type and is more common in women. It originates below the inguinal ligament, appears more lateral, and can be hard to differentiate from lymph nodes. It never courses into the scrotum.",
+      "CondylomaAccuminata": "This term refers to Condyloma Accuminata, also known as genital warts.",
+      "GenitalHerpesSimplex": "This term refers to Genital Herpes Simplex, a viral infection.",
+      "Chancre": "This term refers to a chancre, a type of skin lesion.",
+      "Hypospadias": "This term refers to hypospadias, a congenital condition where the opening of the urethra is on the underside of the penis.",
+      "PeyroniesDisease": "This term refers to Peyronie's Disease, a condition involving fibrous scar tissue in the penis.",
+      "CarcinomaOfPenis": "This term refers to carcinoma of the penis, which is a type of cancer.",
+      "DDxTesticularTumor": "For a testicular tumor, the typical age is 20-45. Symptoms include painless swelling. It is located attached to the testis and appears solid on ultrasound.",
+      "DDxEpididymitis": "For epididymitis, it can occur at any age. Symptoms include acute, painful swelling, with or without fever, and it is located around the testis.",
+      "DDxHydrocele": "For a hydrocele, it can occur at any age and typically has no symptoms. It is located in the vaginal sac around the testis and appears cystic on ultrasound.",
+      "DDxSpermatocele": "For a spermatocele, it is common in middle age. Symptoms include painless swelling. It is located on the top of the testis and appears cystic on ultrasound.",
+      "DDxVaricocele": "For a varicocele, it is common in the young. Symptoms may be absent or described as a 'bag of worms'. It is more common on the left side and appears cystic on ultrasound.",
+      "AtrophicTestis": "This describes atrophic testes, contrasting them with normal ones.",
+      "EpidermoidCysts": "This term refers to epidermoid cysts on the scrotum.",
+      "ScrotalEdema": "This term refers to scrotal edema, or swelling of the scrotum.",
+      "Hydrocele": "This term refers to a hydrocele, a fluid-filled sac around a testicle.",
+      "Cryptorchidism": "This term refers to cryptorchidism, which is an undescended testicle.",
+      "TesticularTumor": "This term refers to a testicular tumor.",
+      "AcuteEpididymitis": "This term refers to acute epididymitis, an inflammation of the epididymis.",
+      "Spermatocele": "This term refers to a spermatocele, a cyst in the epididymis.",
+      "TuberculousEpididymitis": "This term refers to tuberculous epididymitis, a specific type of epididymal inflammation.",
+      "Varicocele": "This term refers to a varicocele, an enlargement of veins within the scrotum.",
+      "TesticularTorsion": "This term refers to testicular torsion, a twisting of the spermatic cord.",
+      "RectalExamComponents": "The rectal exam includes inspection of the perianal skin for external hemorrhoids, warts, or lesions. The digital exam assesses anal sphincter tone, the prostate, the rectal vault, and may involve using a Hemoccult card.",
+      "AnalFissure": "This term refers to an anal fissure.",
+      "ProstateExam": "This refers to the prostate exam portion of the digital rectal exam.",
+      "OccultBloodTesting": "This refers to occult blood testing, often done with a Hemoccult card.",
+      "Hemorrhoids": "This term refers to hemorrhoids.",
+      "PerirectalAbscess": "This term refers to a perirectal abscess.",
+      "RectalCancer": "This term refers to rectal cancer."
+    }
+  }
+};
 
 
         // --- NO NEED TO EDIT BELOW THIS LINE ---
