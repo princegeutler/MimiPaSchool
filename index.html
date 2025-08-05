@@ -3,354 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Expert Medical Math Quiz</title>
-    
+    <title>Simple Quiz Player</title>
     <style>
+        :root {
+            --primary-bg: #f4f7f9;
+            --secondary-bg: #ffffff;
+            --primary-text: #2c3e50;
+            --secondary-text: #7f8c8d;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --correct-color: #2ecc71;
+            --incorrect-color: #e74c3c;
+            --border-color: #dfe6e9;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
         body {
-            background-color: #f0f4f8;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
-            margin: 0;
-            padding: 20px 0;
         }
-        .quiz-container {
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
-            width: 90%;
+
+        .container {
+            width: 100%;
             max-width: 800px;
-            padding: 30px 40px;
-            box-sizing: border-box;
+            background-color: var(--secondary-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
         }
-        h1 {
-            color: #1a2b47;
+
+        .view {
+            padding: 30px;
+            display: none; /* Hidden by default */
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        h1, h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-top: 0;
+            color: var(--primary-text);
         }
+        
         h2 {
-            color: #2d3748;
+            font-size: 1.5em;
             margin-bottom: 25px;
-            line-height: 1.5;
-            text-align: left;
-            font-size: 1.2rem;
         }
-        .btn-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
+
+        p, label {
+            line-height: 1.6;
+            color: var(--primary-text);
         }
-        .btn {
-            background-color: #f7fafc;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 15px;
-            font-size: 1rem;
-            color: #1a2b47;
-            cursor: pointer;
-            transition: all 0.2s ease-in-out;
-            text-align: left;
-        }
-        .btn:hover:not(:disabled) {
-            background-color: #e2e8f0;
-            border-color: #4299e1;
-            transform: translateY(-2px);
-        }
-        .btn:disabled { cursor: not-allowed; }
-        .btn.correct {
-            background-color: #d1fae5;
-            border-color: #10b981;
-            color: #065f46;
-            font-weight: bold;
-        }
-        .btn.wrong {
-            background-color: #fee2e2;
-            border-color: #ef4444;
-        }
-        .controls {
+
+        .button-group {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 25px;
         }
-        #progress-text { color: #718096; }
-        .next-btn {
-            background-color: #4f46e5;
+
+        .button {
+            background-color: var(--accent-color);
             color: white;
             border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 8px;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        .button.secondary {
+            background-color: #bdc3c7;
+        }
+        
+        .button.secondary:hover {
+             background-color: #95a5a6;
+        }
+
+        .button.danger {
+            background-color: var(--incorrect-color);
+        }
+        
+        .button.danger:hover {
+            background-color: #c0392b;
+        }
+        
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+
+        #module-selection-form label {
+            display: block;
+            background-color: var(--primary-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 10px;
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        .next-btn:hover { background-color: #4338ca; }
-        .feedback {
-            margin-top: 20px;
-            font-size: 0.95rem;
-            padding: 15px;
-            border-radius: 8px;
-            line-height: 1.6;
+
+        #module-selection-form label:hover {
+            background-color: #e8eced;
         }
-        .feedback.correct { color: #064e3b; background-color: #d1fae5; border-left: 5px solid #10b981;}
-        .feedback.wrong { color: #991b1b; background-color: #fee2e2; border-left: 5px solid #ef4444;}
-        .hide { display: none; }
+        
+        #module-selection-form input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        #quiz-progress {
+            text-align: center;
+            font-weight: 600;
+            color: var(--secondary-text);
+            margin-bottom: 20px;
+        }
+
+        #question-text {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        
+        #answer-options {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .option-btn {
+            width: 100%;
+            text-align: left;
+            padding: 15px;
+            background-color: var(--secondary-bg);
+            border: 2px solid var(--border-color);
+            color: var(--primary-text);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .option-btn:not(:disabled):hover {
+            border-color: var(--accent-color);
+            background-color: #eaf5fc;
+        }
+        
+        .option-btn.correct {
+            background-color: var(--correct-color);
+            border-color: var(--correct-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .option-btn.incorrect {
+            background-color: var(--incorrect-color);
+            border-color: var(--incorrect-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .option-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.9;
+        }
+        
+        #explanation-text {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: var(--primary-bg);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+            display: none; /* Hidden until an answer is given */
+        }
+        
+        #explanation-text p {
+             margin: 0;
+        }
+        
+        #quiz-summary-view {
+            text-align: center;
+        }
+
+        #final-score {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="quiz-container">
-        <h1>Final Expert Quiz 🧠</h1>
-        <div id="quiz-body">
-            <h2 id="question-text">Loading...</h2>
-            <div id="answer-buttons" class="btn-grid"></div>
-            <div id="feedback-text" class="feedback hide"></div>
+
+    <div class="container">
+        <div id="module-selection-view" class="view">
+            <h2>Select Modules for Your Quiz</h2>
+            <div id="module-selection-form"></div>
+            <div class="button-group">
+                <button id="start-quiz-btn" class="button" disabled>Start Quiz</button>
+            </div>
         </div>
-        <div class="controls">
-             <div id="progress-text">Question 1 of 20</div>
-            <button id="next-button" class="next-btn hide">Next</button>
+
+        <div id="active-quiz-view" class="view">
+            <div id="quiz-progress"></div>
+            <div id="question-text"></div>
+            <div id="answer-options"></div>
+            <div id="explanation-text"></div>
+            <div class="button-group">
+                <button id="skip-question-btn" class="button secondary">Skip Question</button>
+                <button id="exit-quiz-btn" class="button danger">Exit Quiz</button>
+            </div>
         </div>
-        <div id="results-container" class="hide">
-            <h2>Quiz Complete! 🎉</h2>
-            <p>Your final score is <span id="final-score">0</span> out of 20.</p>
-            <p id="percentage"></p>
-            <button id="restart-button" class="next-btn">Restart Quiz</button>
+
+        <div id="quiz-summary-view" class="view">
+            <h2>Quiz Complete!</h2>
+            <p>Your final score is:</p>
+            <div id="final-score"></div>
+            <div class="button-group">
+                <button id="return-to-menu-btn" class="button">Back to Main Menu</button>
+            </div>
         </div>
     </div>
-    
+
     <script>
-        const questionTextElement = document.getElementById('question-text');
-        const answerButtonsElement = document.getElementById('answer-buttons');
-        const feedbackTextElement = document.getElementById('feedback-text');
-        const nextButton = document.getElementById('next-button');
-        const progressTextElement = document.getElementById('progress-text');
-        const quizBodyElement = document.getElementById('quiz-body');
-        const resultsContainerElement = document.getElementById('results-container');
-        const finalScoreElement = document.getElementById('final-score');
-        const percentageElement = document.getElementById('percentage');
-        const restartButton = document.getElementById('restart-button');
+        // ######################################################################
+        // ######################################################################
+        //
+        //          THIS IS THE ONLY PLACE YOU NEED TO EDIT THE EXAM
+        //
+        //  - Delete the example modules below.
+        //  - Add your own by following the same format.
+        //  - Make sure each module has a unique key (e.g., "Quiz_Module_1").
+        //  - Ensure commas are correct between modules.
+        //
+        //  --- Template for a new module ---
+        //
+        //  "Your_Unique_Module_ID": {
+        //      "moduleName": "The Name Students Will See",
+        //      "questionBank": [
+        //          {
+        //              "topic": "A_Unique_Topic_ID",
+        //              "question": "Your question text here?",
+        //              "options": ["Option A", "Option B", "Option C", "Option D"],
+        //              "correctAnswer": 0 // 0 is A, 1 is B, 2 is C, 3 is D
+        //          }
+        //      ],
+        //      "topicTextMap": {
+        //          "A_Unique_Topic_ID": "The explanation text for the topic goes here."
+        //      }
+        //  },
+        //
+        // ######################################################################
+        // ######################################################################
 
-        let currentQuestionIndex = 0;
-        let score = 0;
-
-        const questions = [
-            {
-                question_text: "1. A 165 lb patient is prescribed a drug at 30 mg/kg/day, divided into three doses. The pharmacy stocks 250 mg capsules. How many capsules are required for a single dose?",
-                options: ["3 capsules", "2 capsules", "4 capsules", "2.5 capsules"],
-                correct_answer_index: 0,
-                rationale: "Weight: 165 lbs / 2.2 = 75 kg. Total daily dose: 75 kg * 30 mg/kg/day = 2250 mg/day. Single dose: 2250 mg / 3 doses = 750 mg/dose. Capsules needed: 750 mg / 250 mg/capsule = 3 capsules."
-            },
-            {
-                question_text: "2. A 1 L IV bag is hung at 08:00 to run at 125 mL/hr. At 11:00, the rate is decreased to 100 mL/hr. At what time will the infusion finish?",
-                options: ["17:15", "16:30", "17:45", "18:00"],
-                correct_answer_index: 0,
-                rationale: "Volume infused by 11:00 (3 hrs): 3 hr * 125 mL/hr = 375 mL. Remaining volume: 1000 mL - 375 mL = 625 mL. Time to infuse remainder: 625 mL / 100 mL/hr = 6.25 hours. 6.25 hours is 6 hours and 15 minutes. Finish time: 11:00 + 6h 15m = 17:15."
-            },
-            {
-                question_text: "3. You are to infuse 2 g of a medication in 500 mL of saline over 4 hours. The patient weighs 198 lbs and the tubing's drop factor is 15 gtts/mL. What is the drip rate in gtts/min?",
-                options: ["31 gtts/min", "25 gtts/min", "42 gtts/min", "62 gtts/min"],
-                correct_answer_index: 0,
-                rationale: "Patient weight and drug amount (2g) are extraneous information. Time: 4 hr * 60 = 240 min. Rate: (500 mL * 15 gtts/mL) / 240 min = 31.25 gtts/min, which rounds to 31 gtts/min."
-            },
-            {
-                question_text: "4. An IV is infusing at 50 gtts/min through a 20 gtts/mL set. How many hours will it take to infuse a total volume of 1.2 L?",
-                options: ["8 hours", "6 hours", "10 hours", "12 hours"],
-                correct_answer_index: 0,
-                rationale: "This requires working backwards. Rate in mL/min: 50 gtts/min / 20 gtts/mL = 2.5 mL/min. Total minutes to infuse 1200 mL: 1200 mL / 2.5 mL/min = 480 minutes. Convert to hours: 480 min / 60 min/hr = 8 hours."
-            },
-            {
-                question_text: "5. A patient needs 400 mg of a drug. The stock vial has a concentration of 2 g / 10 mL. After drawing up the dose, how many mL will be left in the vial?",
-                options: ["8 mL", "2 mL", "5 mL", "10 mL"],
-                correct_answer_index: 0,
-                rationale: "First, find the dose volume. 2 g = 2000 mg. Concentration is 2000mg/10mL or 200mg/mL. Dose volume: 400 mg / 200 mg/mL = 2 mL. Remaining volume: 10 mL (start) - 2 mL (dose) = 8 mL."
-            },
-            {
-                question_text: "6. A patient (80 kg) is ordered a dopamine drip at 5 mcg/kg/min. The pharmacy supplies a bag of 400 mg of dopamine in 250 mL of D5W. At what rate (mL/hr) should the IV pump be set?",
-                options: ["15 mL/hr", "12 mL/hr", "20 mL/hr", "30 mL/hr"],
-                correct_answer_index: 0,
-                rationale: "Dose in mcg/min: 80 kg * 5 mcg/kg/min = 400 mcg/min. Dose in mg/hr: (400 mcg/min * 60 min/hr) / 1000 mcg/mg = 24 mg/hr. Concentration: 400 mg / 250 mL = 1.6 mg/mL. Final Rate: (24 mg/hr) / (1.6 mg/mL) = 15 mL/hr."
-            },
-            {
-                question_text: "7. A patient's temperature is 103.1°F. After medication, it drops by 2.5°C. What is the patient's new temperature in Fahrenheit?",
-                options: ["98.6°F", "99.1°F", "100.6°F", "98.1°F"],
-                correct_answer_index: 0,
-                rationale: "A change of 2.5°C is a change of (2.5 * 9/5) = 4.5°F. The new temperature is 103.1°F - 4.5°F = 98.6°F."
-            },
-            {
-                question_text: "8. An elixir (200 mg/5 mL) is prescribed at 2 tsp TID for 10 days. How many grams of the drug will the patient consume in total?",
-                options: ["12 g", "15 g", "9 g", "24 g"],
-                correct_answer_index: 0,
-                rationale: "Vol per dose: 2 tsp * 5 mL/tsp = 10 mL. Mg per dose: (10 mL * 200 mg) / 5 mL = 400 mg. Mg per day: 400 mg * 3 doses = 1200 mg. Total mg for 10 days: 1200 mg/day * 10 days = 12000 mg. Total grams: 12000 mg / 1000 = 12 g."
-            },
-            {
-                question_text: "9. You must administer 1 g of Ancef in 50 mL of D5W over 30 minutes. The patient weighs 70 kg and the IV set drop factor is 10 gtts/mL. What is the pump rate in mL/hr?",
-                options: ["100 mL/hr", "50 mL/hr", "150 mL/hr", "75 mL/hr"],
-                correct_answer_index: 0,
-                rationale: "Patient weight and drop factor are extraneous info for a pump rate. Rate = (50 mL / 30 min) * 60 min/hr = 100 mL/hr."
-            },
-            {
-                question_text: "10. You have an IV of 1 L D5W infusing at 42 gtts/min. The set is 15 gtts/mL. If the bag was hung at 12:00, how much fluid (in mL) will be left at 15:30?",
-                options: ["412 mL", "598 mL", "500 mL", "380 mL"],
-                correct_answer_index: 0,
-                rationale: "Time elapsed: 3.5 hours = 210 minutes. Rate in mL/min: 42 gtts/min / 15 gtts/mL = 2.8 mL/min. Volume infused: 2.8 mL/min * 210 min = 588 mL. Volume remaining: 1000 mL - 588 mL = 412 mL."
-            },
-            {
-                question_text: "11. A 220 lb patient needs a loading dose of a drug at 15 mg/kg. The drug comes in 500 mg tablets. For the loading dose only, you should administer:",
-                options: ["3 tablets", "2 tablets", "4 tablets", "2.5 tablets"],
-                correct_answer_index: 0,
-                rationale: "Weight: 220 lbs / 2.2 = 100 kg. Loading dose: 100 kg * 15 mg/kg = 1500 mg. Tablets: 1500 mg / 500 mg/tab = 3 tablets."
-            },
-            {
-                question_text: "12. A medication dose is 45 mg. The elixir concentration is 12mg/5mL. How many total mL are needed for a 7-day course if the dose is given twice daily?",
-                options: ["262.5 mL", "187.5 mL", "300 mL", "225 mL"],
-                correct_answer_index: 0,
-                rationale: "Vol per dose: (45 mg * 5 mL) / 12 mg = 18.75 mL. Daily volume: 18.75 mL * 2 = 37.5 mL. Total volume for 7 days: 37.5 mL/day * 7 days = 262.5 mL."
-            },
-            {
-                question_text: "13. You have a 1 L bag of saline. A primary infusion is running at 75 mL/hr. You also run a secondary IV of 50 mL over 30 minutes. If both are started at the same time, how much primary fluid will have infused when the secondary IV is finished?",
-                options: ["37.5 mL", "75 mL", "50 mL", "18.75 mL"],
-                correct_answer_index: 0,
-                rationale: "The secondary IV runs for 30 minutes (0.5 hours). In that time, the primary infusion delivers: 75 mL/hr * 0.5 hr = 37.5 mL."
-            },
-            {
-                question_text: "14. A patient weighs 110 lbs. An order is for a drug at 40 mg/kg/day, divided into 4 equal doses. You have 250 mg tablets. How many tablets will you give per dose?",
-                options: ["2 tablets", "1 tablet", "3 tablets", "1.5 tablets"],
-                correct_answer_index: 0,
-                rationale: "Weight: 110 lbs / 2.2 = 50 kg. Total daily dose: 50 kg * 40 mg/kg/day = 2000 mg/day. Per dose: 2000 mg / 4 = 500 mg/dose. Tablets: 500 mg / 250 mg/tab = 2 tablets."
-            },
-            {
-                question_text: "15. A patient needs to receive 0.75 L of fluid over 6 hours. The IV set is calibrated to 20 gtts/mL. After 2 hours, 300 mL have infused. What was the average drip rate during the first 2 hours?",
-                options: ["50 gtts/min", "42 gtts/min", "60 gtts/min", "33 gtts/min"],
-                correct_answer_index: 0,
-                rationale: "The total volume (0.75L) and total time (6hr) are extraneous. The question only asks about the first 2 hours. Time: 2 hr * 60 = 120 min. Rate: (300 mL * 20 gtts/mL) / 120 min = 50 gtts/min."
-            },
-            {
-                question_text: "16. A baby's diaper holds 6 ounces of urine. Assuming the density of water, what is the urine output in milliliters?",
-                options: ["170 mL", "200 mL", "150 mL", "125 mL"],
-                correct_answer_index: 0,
-                rationale: "This requires multiple steps based on the document's conversions. Oz to Lbs: 6 oz / 16 oz/lb = 0.375 lbs. Lbs to Kg: 0.375 lbs / 2.2 lbs/kg = 0.17045 kg. Kg to g: 0.17045 kg * 1000 g/kg = 170.45 g. For water, 1g = 1mL. So, output is ~170 mL."
-            },
-            {
-                question_text: "17. A syringe contains 50 cc of medication. You administer 35 mL. You then draw up another 0.015 L. What is the final volume in the syringe in cc?",
-                options: ["30 cc", "15 cc", "25 cc", "35 cc"],
-                correct_answer_index: 0,
-                rationale: "Initial: 50 cc = 50 mL. After admin: 50 mL - 35 mL = 15 mL. Add: 0.015 L = 15 mL. Final volume: 15 mL + 15 mL = 30 mL. Since 1 mL = 1 cc, the final volume is 30 cc."
-            },
-            {
-                question_text: "18. A patient's water bottle, when full, weighs 1075 g. The empty bottle weighs 75 g. After their shift, the bottle weighs 475 g. How many mL of water did the patient drink?",
-                options: ["600 mL", "500 mL", "400 mL", "700 mL"],
-                correct_answer_index: 0,
-                rationale: "Weight of water at start: 1075 g - 75 g = 1000 g. Weight of water at end: 475 g - 75 g = 400 g. Water consumed (in grams): 1000 g - 400 g = 600 g. Since 1g of water = 1mL, the patient drank 600 mL."
-            },
-            {
-                question_text: "19. A drug must be stored between 36°F and 46°F. Your current refrigerator is at 5°C. Is the temperature acceptable, and if not, by how many degrees Fahrenheit is it off from the nearest acceptable temperature?",
-                options: ["Yes, it is 41°F, which is within range.", "No, it is 41°F, which is 5°F too cold.", "No, it is 50°F, which is 4°F too warm.", "Yes, it is 46°F, which is within range."],
-                correct_answer_index: 0,
-                rationale: "Convert the current temp to Fahrenheit: (5°C * 9/5) + 32 = 41°F. The acceptable range is 36°F - 46°F. Since 41°F is within this range, the temperature is acceptable."
-            },
-            {
-                question_text: "20. A 180 lb patient needs a dose of 20 mg/kg. The drug is supplied as 1.5 g in a 10 mL vial. This dose will be added to a 100 mL mini-bag and infused over 45 minutes. What volume (mL) must be drawn from the vial for the correct dose?",
-                options: ["5.45 mL", "8.18 mL", "6.0 mL", "10.0 mL"],
-                correct_answer_index: 0,
-                rationale: "The infusion details (100 mL bag, 45 min) are extraneous. Weight: 180 lbs / 2.2 = 81.81 kg. Dose: 81.81 kg * 20 mg/kg = 1636.36 mg. Concentration: 1.5 g = 1500 mg. The vial is 1500mg/10mL, or 150 mg/mL. Volume to draw: 1636.36 mg / 150 mg/mL = 10.9 mL. Re-checking... Let's use 187lb patient for cleaner math. 187/2.2=85kg. 85*20=1700mg. Nope. Let's use 165lb. 165/2.2=75kg. 75kg*20mg/kg=1500mg. That works. Dose is 1500mg. Vial has 1500mg. So draw up the whole 10mL. Let's use that, but with a different dose."
-            },
-            {
-                question_text: "20. (Final) A 165 lb patient needs 15 mg/kg of a drug. It comes in a 1.5g/10mL vial. The dose will be added to a 100mL bag and run over 1 hour. What volume (in mL) is drawn from the vial?",
-                options: ["7.5 mL", "5.0 mL", "10.0 mL", "6.5 mL"],
-                correct_answer_index: 0,
-                rationale: "Weight: 165 lbs / 2.2 = 75 kg. Dose needed: 75 kg * 15 mg/kg = 1125 mg. Vial concentration: 1.5 g = 1500 mg. So, 1500 mg / 10 mL = 150 mg/mL. Volume to draw: 1125 mg / 150 mg/mL = 7.5 mL."
-            }
-        ];
-
-
-        nextButton.addEventListener('click', () => {
-            currentQuestionIndex++;
-            showQuestion();
-        });
-
-        restartButton.addEventListener('click', startQuiz);
-
-        function startQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            resultsContainerElement.classList.add('hide');
-            quizBodyElement.classList.remove('hide');
-            progressTextElement.classList.remove('hide');
-            nextButton.innerText = 'Next';
-            showQuestion();
-        }
-
-        function showQuestion() {
-            resetState();
-            if (currentQuestionIndex >= questions.length) {
-                showResults();
-                return;
-            }
-
-            let question = questions[currentQuestionIndex];
-            questionTextElement.innerText = question.question_text;
-            progressTextElement.innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-
-            question.options.forEach((option, index) => {
-                const button = document.createElement('button');
-                button.innerHTML = option;
-                button.classList.add('btn');
-                button.dataset.correct = index === question.correct_answer_index;
-                button.addEventListener('click', selectAnswer);
-                answerButtonsElement.appendChild(button);
-            });
-        }
-
-        function resetState() {
-            nextButton.classList.add('hide');
-            feedbackTextElement.classList.add('hide');
-            while (answerButtonsElement.firstChild) {
-                answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-            }
-        }
-
-        function selectAnswer(e) {
-            const selectedButton = e.currentTarget;
-            const correct = selectedButton.dataset.correct === 'true';
-            
-            feedbackTextElement.classList.remove('hide');
-            if (correct) {
-                score++;
-                feedbackTextElement.innerHTML = '<strong>✅ Correct!</strong> ' + questions[currentQuestionIndex].rationale;
-                feedbackTextElement.className = 'feedback correct';
-            } else {
-                feedbackTextElement.innerHTML = '<strong>❌ Incorrect.</strong> The correct reasoning is: ' + questions[currentQuestionIndex].rationale;
-                feedbackTextElement.className = 'feedback wrong';
-            }
-
-            Array.from(answerButtonsElement.children).forEach(button => {
-                if (button.dataset.correct === 'true') {
-                    button.classList.add('correct');
+        const quizData = {
+            "Quiz_Module_1": {
+                "moduleName": "Basic Anatomy: The Heart",
+                "questionBank": [
+                    {
+                        "topic": "FourChambers",
+                        "question": "How many chambers does the human heart have?",
+                        "options": ["One", "Two", "Three", "Four"],
+                        "correctAnswer": 3
+                    },
+                    {
+                        "topic": "AortaFunction",
+                        "question": "What is the primary function of the aorta?",
+                        "options": [
+                            "To carry deoxygenated blood to the lungs",
+                            "To carry oxygenated blood to the rest of the body",
+                            "To receive blood from the body",
+                            "To pump blood to the ventricles"
+                        ],
+                        "correctAnswer": 1
+                    }
+                ],
+                "topicTextMap": {
+                    "FourChambers": "The human heart is a four-chambered muscular organ. The four chambers are the right atrium, the left atrium, the right ventricle, and the left ventricle.",
+                    "AortaFunction": "The aorta is the largest artery in the body. Its primary function is to carry oxygenated blood from the left ventricle to the rest of the body through systemic circulation."
                 }
-                button.disabled = true;
-            });
-            
-            if (questions.length > currentQuestionIndex + 1) {
-                nextButton.innerText = 'Next Question';
-            } else {
-                nextButton.innerText = 'Show Final Results';
+            },
+            "Quiz_Module_2": {
+                "moduleName": "Pharmacology 101",
+                "questionBank": [
+                    {
+                        "topic": "AspirinClass",
+                        "question": "To which class of drugs does Aspirin belong?",
+                        "options": ["Antibiotic", "NSAID", "Antiviral", "Opioid"],
+                        "correctAnswer": 1
+                    },
+                    {
+                        "topic": "HalfLife",
+                        "question": "What does the term 'half-life' refer to in pharmacology?",
+                        "options": [
+                            "The time it takes for a drug to show its effect",
+                            "The time it takes for half of the drug dose to be eliminated from the body",
+                            "The duration of the drug's patent",
+                            "Half the maximum effective dose"
+                        ],
+                        "correctAnswer": 1
+                    }
+                ],
+                "topicTextMap": {
+                    "AspirinClass": "Aspirin, or acetylsalicylic acid, is a nonsteroidal anti-inflammatory drug (NSAID). It is used to reduce pain, fever, and/or inflammation, and as an antiplatelet agent.",
+                    "HalfLife": "The half-life of a drug is a pharmacokinetic parameter defined as the time it takes for the concentration of the drug in the plasma or the total amount in the body to be reduced by 50%."
+                }
+            },
+            "Quiz_Module_3": {
+                "moduleName": "Clinical Signs",
+                "questionBank": [
+                    {
+                        "topic": "CullensSign",
+                        "question": "Periumbilical ecchymosis (bruising around the umbilicus) is known as what clinical sign?",
+                        "options": ["Turner's Sign", "Chvostek's Sign", "Cullen's Sign", "Trousseau's Sign"],
+                        "correctAnswer": 2
+                    }
+                ],
+                "topicTextMap": {
+                    "CullensSign": "Cullen's sign is superficial edema and bruising in the subcutaneous fatty tissue around the umbilicus. It is a sign of retroperitoneal hemorrhage, often associated with acute pancreatitis."
+                }
             }
-            nextButton.classList.remove('hide');
-        }
+        };
 
-        function showResults() {
-            quizBodyElement.classList.add('hide');
-            progressTextElement.classList.add('hide');
-            nextButton.classList.add('hide');
-            resultsContainerElement.classList.remove('hide');
-            finalScoreElement.innerText = score;
-            const percent = (score / questions.length) * 100;
-            percentageElement.innerText = `You scored ${percent.toFixed(1)}%!`;
-        }
 
-        startQuiz();
+        // --- NO NEED TO EDIT BELOW THIS LINE ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const views = {
+                moduleSelection: document.getElementById('module-selection-view'),
+                activeQuiz: document.getElementById('active-quiz-view'),
+                quizSummary: document.getElementById('quiz-summary-view'),
+            };
+
+            const elements = {
+                moduleSelectionForm: document.getElementById('module-selection-form'),
+                startQuizBtn: document.getElementById('start-quiz-btn'),
+                quizProgress: document.getElementById('quiz-progress'),
+                questionText: document.getElementById('question-text'),
+                answerOptions: document.getElementById('answer-options'),
+                explanationText: document.getElementById('explanation-text'),
+                skipQuestionBtn: document.getElementById('skip-question-btn'),
+                exitQuizBtn: document.getElementById('exit-quiz-btn'),
+                finalScore: document.getElementById('final-score'),
+                returnToMenuBtn: document.getElementById('return-to-menu-btn'),
+            };
+
+            let quizState = {
+                questions: [],
+                currentQuestionIndex: 0,
+                score: 0,
+            };
+
+            const navigate = (targetView) => {
+                Object.values(views).forEach(v => v.classList.remove('active'));
+                if (views[targetView]) {
+                    views[targetView].classList.add('active');
+                }
+            };
+            
+            const renderModuleSelection = () => {
+                elements.moduleSelectionForm.innerHTML = '';
+                Object.keys(quizData).forEach(key => {
+                    const module = quizData[key];
+                    const label = document.createElement('label');
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.value = key;
+                    label.appendChild(checkbox);
+                    label.appendChild(document.createTextNode(` ${module.moduleName}`));
+                    elements.moduleSelectionForm.appendChild(label);
+                });
+                elements.startQuizBtn.disabled = true;
+                navigate('moduleSelection');
+            };
+
+            const handleStartQuiz = () => {
+                const selectedCheckboxes = elements.moduleSelectionForm.querySelectorAll('input[type="checkbox"]:checked');
+                if (selectedCheckboxes.length === 0) return;
+                
+                let combinedQuestions = [];
+                selectedCheckboxes.forEach(cb => {
+                    const moduleKey = cb.value;
+                    const questions = quizData[moduleKey].questionBank.map(q => ({...q, moduleKey}));
+                    combinedQuestions = combinedQuestions.concat(questions);
+                });
+                
+                for (let i = combinedQuestions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [combinedQuestions[i], combinedQuestions[j]] = [combinedQuestions[j], combinedQuestions[i]];
+                }
+                
+                quizState = { questions, currentQuestionIndex: 0, score: 0 };
+                navigate('activeQuiz');
+                displayQuestion();
+            };
+            
+            const displayQuestion = () => {
+                if (quizState.currentQuestionIndex >= quizState.questions.length) {
+                    displaySummary();
+                    return;
+                }
+
+                const currentQ = quizState.questions[quizState.currentQuestionIndex];
+                elements.quizProgress.textContent = `Question ${quizState.currentQuestionIndex + 1} of ${quizState.questions.length}`;
+                elements.questionText.textContent = currentQ.question;
+                elements.answerOptions.innerHTML = '';
+                elements.explanationText.style.display = 'none';
+
+                currentQ.options.forEach((option, index) => {
+                    const btn = document.createElement('button');
+                    btn.textContent = option;
+                    btn.classList.add('button', 'option-btn');
+                    btn.addEventListener('click', () => handleAnswerSelection(index));
+                    elements.answerOptions.appendChild(btn);
+                });
+                
+                const oldNextBtn = document.getElementById('next-q-btn');
+                if(oldNextBtn) oldNextBtn.remove();
+            };
+            
+            const handleAnswerSelection = (selectedIndex) => {
+                const currentQ = quizState.questions[quizState.currentQuestionIndex];
+                const isCorrect = selectedIndex === currentQ.correctAnswer;
+                if(isCorrect) quizState.score++;
+                
+                Array.from(elements.answerOptions.children).forEach((btn, index) => {
+                    btn.disabled = true;
+                    if(index === currentQ.correctAnswer) btn.classList.add('correct');
+                    else if (index === selectedIndex) btn.classList.add('incorrect');
+                });
+                
+                const explanation = quizData[currentQ.moduleKey].topicTextMap[currentQ.topic];
+                elements.explanationText.innerHTML = `<p><strong>Explanation:</strong> ${explanation || "No explanation available."}</p>`;
+                elements.explanationText.style.display = 'block';
+
+                const nextBtn = document.createElement('button');
+                nextBtn.textContent = 'Next Question';
+                nextBtn.id = 'next-q-btn';
+                nextBtn.classList.add('button');
+                nextBtn.onclick = () => {
+                    quizState.currentQuestionIndex++;
+                    displayQuestion();
+                };
+                elements.activeQuiz.querySelector('.button-group').appendChild(nextBtn);
+            };
+            
+            const displaySummary = () => {
+                navigate('quizSummary');
+                elements.finalScore.textContent = `${quizState.score} / ${quizState.questions.length}`;
+            };
+            
+            elements.moduleSelectionForm.addEventListener('change', () => {
+                elements.startQuizBtn.disabled = !elements.moduleSelectionForm.querySelector('input:checked');
+            });
+
+            elements.startQuizBtn.addEventListener('click', handleStartQuiz);
+            elements.skipQuestionBtn.addEventListener('click', () => {
+                quizState.currentQuestionIndex++;
+                displayQuestion();
+            });
+
+            const exit = () => {
+                if (confirm('Are you sure you want to exit? Your current quiz progress will be lost.')) {
+                    renderModuleSelection();
+                }
+            };
+            elements.exitQuizBtn.addEventListener('click', exit);
+            elements.returnToMenuBtn.addEventListener('click', renderModuleSelection);
+
+            renderModuleSelection();
+        });
     </script>
 </body>
 </html>
