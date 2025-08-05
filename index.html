@@ -3884,7 +3884,9 @@
                     [combinedQuestions[i], combinedQuestions[j]] = [combinedQuestions[j], combinedQuestions[i]];
                 }
                 
-                quizState = { questions, currentQuestionIndex: 0, score: 0 };
+                quizState.questions = combinedQuestions;
+                quizState.currentQuestionIndex = 0;
+                quizState.score = 0;
                 navigate('activeQuiz');
                 displayQuestion();
             };
